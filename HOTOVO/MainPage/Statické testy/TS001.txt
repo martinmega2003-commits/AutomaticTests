@@ -1,0 +1,595 @@
+TS001- Testování hlavní stránky
+
+Pre-conditions:
+	- Nacházím se na stránce https://www.dubnany.eu/
+	- Využívám prohlížeč Chrome 136.0.7103.93
+	- cookies nebyly odmítnuty 
+	- Hlavní stránka je otevřená (Suite Setup „Open Main Page“) 
+TC001:
+Testovací kroky:
+
+1. Kliknu na odkaz "Úřad"
+   - Očekávaná URL: https://www.dubnany.eu/urad/
+   - Vrátím se zpět na hlavní stránku
+
+2. Kliknu na odkaz "Město"
+   - Očekávaná URL: https://www.dubnany.eu/mesto/
+   - Vrátím se zpět na hlavní stránku
+
+3. Kliknu na odkaz "Služby"
+   - Očekávaná URL: https://www.dubnany.eu/sluzby/
+   - Vrátím se zpět na hlavní stránku
+
+4. Kliknu na odkaz "Kultura"
+   - Očekávaná URL: https://www.dubnany.eu/kultura/
+   - Vrátím se zpět na hlavní stránku
+
+5. Kliknu na odkaz "Fotogalerie"
+   - Očekávaná URL: https://www.dubnany.eu/fotogalerie-1/
+   - Vrátím se zpět na hlavní stránku
+
+6. Kliknu na odkaz "Kontakt"
+   - Očekávaná URL: https://www.dubnany.eu/kontakt/
+   - Vrátím se zpět na hlavní stránku
+
+7. Kliknu na odkaz "Volby 2024"
+   - Očekávaná URL: https://www.dubnany.eu/volby-2024/
+   - Vrátím se zpět na hlavní stránku
+
+8. Kliknu na odkaz "Projekty"
+   - Očekávaná URL: https://www.dubnany.eu/projekty/
+   - Vrátím se zpět na hlavní stránku
+
+Očekávaný výsledek:
+- Každý odkaz v hlavním menu přesměruje uživatele na odpovídající cílovou stránku.
+
+Post-conditions:
+- Browser session ukončena (zavření okna prohlížeče)
+- Žádné změny na stránce nezůstanou (návrat na výchozí stav)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 - Hover a klik na „Platné vyhlášky a nařízení“  
+
+Testovací kroky:  
+1. Najedu myší na položku **„Úřad“**  
+   - Očekávané: Zobrazí se podmenu s odkazem **„Platné vyhlášky a nařízení“**  
+2. Kliknu na odkaz **„Platné vyhlášky a nařízení“**  
+   - Očekávané: Provede se akce kliknutí  
+3. Ověřím přesměrování  
+   - Očekávaná URL: `https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/`
+
+Očekávaný výsledek:  
+- Uživatel je přesměrován na stránku **„Platné vyhlášky a nařízení“** pod `/urad/`.
+
+Post-conditions:  
+- Browser session ukončena (Suite Teardown „Close Browser“)  
+- Uživatel se nachází na stránce Platné vyhlášky a nařízení  
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC003 - Ověření funkčnosti vyhledávacího tlačítka  
+Cíl testu: Ověřit, že vyhledávací tlačítko otevře vyhledávací pole, zadání dotazu a přesměruje na správný výsledný dokument.
+
+
+Testovací kroky:
+1. Najedu myší na vyhledávací ikonu  
+   - Akce: `Mouse Over    id=hledej`  
+2. Kliknu na vyhledávací ikonu, aby se pole zobrazilo  
+   - Akce: `Click Element    id=hledej`  
+3. Zadám text hledaného dokumentu  
+   - Akce: `Input Text    id=hledej    Územní studie`  
+4. Potvrdím zadání klávesou ENTER  
+   - Akce: `Press Keys    id=hledej    ENTER`  
+5. Na výsledkové stránce kliknu na odkaz ve třetím řádku tabulky  
+   - Akce: `Click Element    //*[@id="ft_casovy"]/tbody/tr[3]/td[2]/a`  
+6. Počkám, až se načte stránka s textem „Územní studie“  
+   - Akce: `Wait Until Page Contains    Územní studie`  
+7. Ověřím, že stránka obsahuje odkaz v editovatelném bloku  
+   - Akce: `Page Should Contain Element    //*[@id="editor_content"]/p[2]/a`
+
+Očekávaný výsledek:
+- Po kliknutí na vyhledávací ikonu se zobrazí pole pro zadání dotazu.
+- Po zadání „Územní studie“ a potvrzení ENTER se načte seznam výsledků.
+- Kliknutím na třetí položku se načte stránka dokumentu s nadpisem „Územní studie“.
+- Na této stránce je viditelný odkaz ve druhém odstavci editovatelného obsahu.
+
+Post-conditions:
+- Prohlížeč se zavře
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Název testu: TC004 – Odstranění cookies  
+Cíl testu: Odmítnout všechny cookies prostřednictvím tlačítka ve webové aplikaci.
+
+Testovací kroky:
+1. Počkám, až se zobrazí tlačítko pro odmítnutí cookies  
+   - Čekací prvek: `id=cookies-consent-reject`  
+2. Kliknu na tlačítko pro odmítnutí cookies  
+   - Akce: `Click Element    id=cookies-consent-reject`
+
+Očekávaný výsledek:
+- Cookies byly odmítnuty a žádné další cookie-lišty se nezobrazují.
+
+Post-conditions:
+- Prohlížeč zůstává otevřený (Suite Teardown: Close Browser)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC005 – Ověření vrácení se na hlavní stránku pomocí loga  
+Cíl testu: Ověřit, že kliknutí na logo přesměruje uživatele zpět na hlavní stránku.
+
+
+Testovací kroky:
+1. Kliknu na logo webu  
+   - Akce: `Click Element    class=logo`  
+2. Ověřím, že se zobrazí obsah hlavní stránky  
+   - Kontrolní prvek: `//*[@id="widget_5"]/div/p[1]`  
+   - Očekávané: Element je přítomen na nové stránce
+
+Očekávaný výsledek:
+- Po kliknutí na logo je uživatel přesměrován na hlavní stránku.
+- Na hlavní stránce je viditelný prvek `//*[@id="widget_5"]/div/p[1]`.
+
+Post-conditions:
+- Suite Teardown: Close Browser (prohlížeč zavřen)  
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC006 – Ověření vrácení se na hlavní stránku pomocí loga  
+
+Pre-conditions::
+- Nacházíme se na stránce https://www.dubnany.eu/mesto/
+
+Testovací kroky:
+1. Kliknu na logo webu  
+   - Akce: Click Element   class=logo
+
+2. Ověřím, že se načetla hlavní stránka  
+   - Kontrolní prvek: //*[@id="widget_5"]/div/p[1]  
+   - Akce: Page Should Contain Element   //*[@id="widget_5"]/div/p[1]
+
+Očekávaný výsledek:
+- Uživatel je po kliknutí na logo přesměrován na hlavní stránku.  
+- Na hlavní stránce je viditelný prvek //*[@id="widget_5"]/div/p[1].
+
+Post-conditions:
+- Suite Teardown: Close Browser (prohlížeč zavřen)  
+- Web se vrátí do výchozího stavu (hlavní stránka připravená pro další testy)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC007 – Otestování Kalendáře  
+
+Pre-conditions::
+- Cookies banner zobrazen (bude odstraněn skriptem)
+
+Testovací kroky:  
+1. Posunu zobrazení na výběr roku  
+   - Akce: `Scroll Element Into View    id=year`  
+2. Vyberu rok 2022  
+   - Akce: `Select From List By Value    id=year    2022`  
+   - Ověřím výběr:  
+     - Akce:  
+       ```
+       ${selected}=    Get Selected List Value    id=year  
+       Should Be Equal    ${selected}    2022
+       ```  
+3. Odstraním překryv cookie banneru pomocí JavaScriptu  
+   - Akce: `Execute JavaScript    document.getElementById('cookie_consent').remove();`  
+4. Definuji lokátor pro den “26” v aktuálním měsíci  
+   - Akce: `Set Variable    ${day_locator}    xpath=//td[contains(@class,"act mesic")]/a[normalize-space(.)="26"]`  
+5. Počkám, až se den “26” zobrazí a bude povolený ke kliknutí  
+   - Akce:  
+     ```
+     Wait Until Element Is Visible    ${day_locator}    timeout=${TIMEOUT}  
+     Wait Until Element Is Enabled    ${day_locator}    timeout=${TIMEOUT}
+     ```  
+6. Posunu zobrazení na den “26” a kliknu na něj  
+   - Akce:  
+     ```
+     Scroll Element Into View    ${day_locator}  
+     Click Element               ${day_locator}
+     ```  
+7. Ověřím, že se načetla cílová stránka kalendáře  
+   - Akce: `Wait Until Page Contains Element    css=body`
+
+Očekávaný výsledek:  
+- Rok 2022 je vybrán v seznamu.  
+- Banner cookies je odstraněn a neblokuje prvky.  
+- Po kliknutí na den “26” se načte stránka s obsahem kalendáře (přítomen je element `css=body`).
+
+Post-conditions:  
+- Suite Teardown: Close Browser (prohlížeč zavřen)  
+- Web je ve výchozím stavu pro další testy  
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC008 - Senioři 
+Cíl testu: Ověří funkčnost zjednodušené verze pro seniory.
+
+Testovací kroky:
+
+1. Počkám, až se zobrazí tlačítko pro odmítnutí cookies  
+   - Akce: `Wait Until Element Is Visible    id=cookies-consent-reject    timeout=${TIMEOUT}`  
+
+2. Kliknu na tlačítko pro odmítnutí cookies  
+   - Akce: `Click Element    id=cookies-consent-reject`  
+
+3. Definuji lokátor pro odkaz "Senioři"  
+   - Akce: `Set Variable    ${senior_link}    xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]`  
+
+4. Počkám, až se odkaz "Senioři" zobrazí  
+   - Akce: `Wait Until Element Is Visible    ${senior_link}    timeout=${TIMEOUT}`  
+
+5. Posunu zobrazení na odkaz "Senioři"  
+   - Akce: `Scroll Element Into View    ${senior_link}`  
+
+6. Kliknu na odkaz "Senioři"  
+   - Akce: `Click Element    ${senior_link}`  
+
+Post-conditions:  
+- Suite Teardown: Close Browser (prohlížeč zavřen)  
+- Web je ve výchozím stavu pro další testy  
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC009 – Ověření přístupu na detail události  
+	Cíl testu: Ověřit, že po najetí myší na hlavní položku menu a výběru podsekce se zobrazí detail události. 
+
+Pre-conditions:
+Cookies již byly odmítnuty (TC004 úspěšně dokončeno)  
+
+Testovací kroky:  
+1. Najedu myší na hlavní menu  
+   - Akce: `Mouse Over    id=menucss1_cs`  
+2. Kliknu na podmenu  
+   - Akce: `Click Element    xpath=//*[@id="menucss18_cs"]/a`  
+3. Kliknu na odkaz konkrétní události  
+   - Akce: `Click Element    xpath=//*[@id="event_1967"]/div[1]/a`  
+
+Očekávaný výsledek:  
+- Uživatel je přesměrován na stránku detailu události s ID 1967  
+
+Post-conditions:  
+- Suite Teardown: Close Browser (prohlížeč zavřen)  
+- Web je ve výchozím stavu pro další testy  
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC010 – Odeslání zprávy přes kontaktní formulář (bez CAPTCHA)  
+Cíl testu: Ověřit odeslání kontaktního formuláře s očekávaným selháním kvůli nevyplněné CAPTCHA.
+
+Pre-conditions:
+Cookies již byly odmítnuty (TC004 úspěšně dokončeno)
+
+estovací kroky:  
+1. Najedu myší na hlavní menu "Kontakt"  
+   - Akce: `Mouse Over    id=menucss29_cs`  
+2. Kliknu na podmenu „Kontaktní formulář“  
+   - Akce: `Click Element    //*[@id="menucss139_cs"]/a`  
+3. Vyplním formulář následujícími údaji:  
+   - Jméno: `Input Text    name=form[1]    Jan`  
+   - Příjmení: `Input Text    name=form[2]    Novák`  
+   - Email: `Input Text    name=form[3]    jan.novak@example.com`  
+   - Telefon: `Input Text    name=form[4]    123 456 789`  
+   - Zpráva: `Input Text    name=form[5]    Testovací zpráva`  
+4. Odešlu formulář  
+   - Akce: `Click Button    name=odeslat`  
+5. Ověřím, že se zobrazila chyba kvůli nevyplněné CAPTCHA  
+   - Akce:  
+     ```
+     Wait Until Element Is Visible    xpath=//div[contains(@class, "status_error")]
+     Element Should Contain           xpath=//div[contains(@class, "status_error")]    Formulář není vyplněn správně. Prosím opravte tato políčka
+     Element Should Contain           xpath=//div[contains(@class, "status_error")]    Captcha
+     ```
+
+Očekávaný výsledek:  
+- Formulář se neodešle a zobrazí se chybové hlášení o nevyplněné CAPTCHA.
+
+Post-conditions:  
+- Suite Teardown: Close Browser (zavře prohlížeč)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC011 – Test vypnutí a zapnutí CSS
+
+Cíl testu:
+Ověřit přepínání zobrazení s a bez CSS stylů přes odkazy v patičce stránky.
+
+
+Testovací kroky:
+1. Počkám na zobrazení tlačítka pro odmítnutí cookies  
+   `Wait Until Element Is Visible    id=cookies-consent-reject    timeout=${TIMEOUT}`
+
+2. Kliknu na tlačítko pro odmítnutí cookies  
+   `Click Element    id=cookies-consent-reject`
+
+3. Posunu se k odkazu pro změnu stylu vzhledu (patka)  
+   `Scroll Element Into View    xpath=//*[@id="footer_right"]/p[2]/a[1]`
+
+4. Kliknu na odkaz „Změna vzhledu“  
+   `Click Element    xpath=//*[@id="footer_right"]/p[2]/a[1]`
+
+5. Kliknu na „Bez grafiky“ (CSS vypnuto)  
+   `Click Element    xpath=//*[@id="zmena_vzhledu"]/ul/li[2]/a`
+
+6. Znovu se posunu k odkazu pro změnu stylu vzhledu  
+   `Scroll Element Into View    xpath=//*[@id="footer_right"]/p[2]/a[1]`
+
+7. Kliknu znovu na odkaz „Změna vzhledu“  
+   `Click Element    xpath=//*[@id="footer_right"]/p[2]/a[1]`
+
+8. Kliknu na „Grafická verze“ (CSS zapnuto)  
+   `Click Element    xpath=//*[@id="zmena_vzhledu"]/ul/li[1]/a`
+
+
+Očekávaný výsledek:
+- Zobrazení stránky se přepne do režimu bez grafiky a poté zpět do standardního zobrazení s grafikou.
+- Funkce přepínání funguje správně bez chyb.
+
+Post-conditions:
+- Stránka se vrátí do grafické (výchozí) verze.
+- Prohlížeč se uzavře (`Close Browser`).
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC012- Kontrola favicon loga
+
+Pre-conditions: Prohlížeč je otevřen a hlavní stránka je načtena (Suite Setup & Test Setup) :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}
+
+Testovací kroky:
+	1. `Wait Until Element Is Visible    xpath=//img[@src='/skins/dubnany2/images/logo.png' and @alt='Oficiální stránky města Dubňany']    timeout=10s`
+
+Očekávaný výsledek:
+ Na stránce je viditelný obrázek loga se src `/skins/dubnany2/images/logo.png` a alt `Oficiální stránky města Dubňany`.
+
+Post-conditions:
+Suite Teardown: `Close Browser` :contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3}	
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC013 - Kontrola loga a odkazu
+
+Cíl testu:
+Ověřit, že logo má správný alt text a že odkaz vede na úvodní stránku.
+
+Pre-conditions:
+- Cookies již byly odmítnuty (TC004 úspěšně dokončeno)  
+- Prohlížeč otevřen a hlavní stránka je načtena (Suite Setup & Test Setup)
+
+
+Testovací kroky:
+1. Počkám, až bude viditelný prvek s logem  
+   - Akce:  
+     ```robotframework
+     Wait Until Element Is Visible    css=a.logo img    timeout=10s
+     ```
+2. Zjistím alt atribut obrázku loga  
+   - Akce:  
+     ```robotframework
+     ${logo_alt}=    Get Element Attribute    css=a.logo img    alt
+     ```
+3. Ověřím, že alt text odpovídá očekávanému  
+   - Akce:  
+     ```robotframework
+     Should Be Equal    ${logo_alt}    Oficiální stránky města Dubňany
+     ```
+4. Zjistím href atribut odkazu  
+   - Akce:  
+     ```robotframework
+     ${logo_href}=    Get Element Attribute    css=a.logo    href
+     ```
+5. Ověřím, že href obsahuje základní URL  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${logo_href}    ${URL}
+     ```
+
+Očekávaný výsledek:
+	Alt atribut obrázku je `Oficiální stránky města Dubňany` a odkaz (`href`) vede na `${URL}`.
+
+
+Post-conditions:
+	Suite Teardown: `Close Browser` (zavře prohlížeč)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC014 - Kontrola vyhledávacího pole  
+
+Cíl testu:
+	Ověřit, že vyhledávací pole má správný placeholder.
+
+
+Pre-conditions:
+	- Cookies již byly odmítnuty (TC004 úspěšně dokončeno)  
+
+Testovací kroky:
+
+1. Počkám, až bude viditelné vyhledávací pole  
+   - Akce:  
+     ```robotframework
+     Wait Until Element Is Visible    css=#hledej    timeout=10s
+     ```
+2. Zjistím placeholder atribut  
+   - Akce:  
+     ```robotframework
+     ${placeholder}=    Get Element Attribute    css=#hledej    placeholder
+     ```
+3. Ověřím, že placeholder odpovídá „Hledaný výraz“  
+   - Akce:  
+     ```robotframework
+     Should Be Equal    ${placeholder}    Hledaný výraz
+     ```
+
+Očekávaný výsledek:
+ Placeholder vyhledávacího pole je `Hledaný výraz`.
+
+Post-conditions:
+- Suite Teardown: `Close Browser` (zavře prohlížeč)
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC015 -  Kontrola kontaktních údajů  
+
+Cíl testu:
+Ověřit, že box s kontaktními údaji obsahuje název úřadu a e-mail. 
+
+Pre-conditions:
+	Cookies již byly odmítnuty (TC004 úspěšně dokončeno)  
+
+Testovací kroky:
+1. Počkám, až bude viditelný box s kontaktními údaji  
+   - Akce:  
+     ```robotframework
+     Wait Until Element Is Visible    css=.leftbox.editor    timeout=10s
+     ```
+2. Zjistím text v boxu  
+   - Akce:  
+     ```robotframework
+     ${contact_text}=    Get Text    css=.leftbox.editor
+     ```
+3. Ověřím, že text obsahuje „Městský úřad Dubňany“  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${contact_text}    Městský úřad Dubňany
+     ```
+4. Ověřím, že text obsahuje e-mail  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${contact_text}    sekretariat@dubnany.eu
+     ```
+
+Očekávaný výsledek:
+	Box obsahuje „Městský úřad Dubňany“ a „sekretariat@dubnany.eu“.
+
+Post-conditions:
+	Suite Teardown: `Close Browser` (zavře prohlížeč)
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC016 - Kontrola položky menu “Úřad”
+
+Cíl testu:
+	Ověřit, že hlavní menu obsahuje odkaz na sekci „Úřad“ se správným href.
+
+Pre-conditions:
+	Cookies již byly odmítnuty (TC004 úspěšně dokončeno)  
+
+Testovací kroky:
+1. Počkám, až bude viditelný odkaz v menu  
+   - Akce:  
+     ```robotframework
+     Wait Until Element Is Visible    xpath=//*[@id='menucss2_cs']/a    timeout=10s
+     ```
+2. Zjistím href atribut odkazu  
+   - Akce:  
+     ```robotframework
+     ${office_href}=    Get Element Attribute    xpath=//*[@id='menucss2_cs']/a    href
+     ```
+3. Ověřím, že href končí na `/urad/`  
+   - Akce:  
+     ```robotframework
+     Should End With    ${office_href}    /urad/
+     ```
+
+Očekávaný výsledek:
+- Odkaz „Úřad“ má href, který končí na `/urad/`.
+
+Post-conditions:
+- Suite Teardown: `Close Browser` (zavře prohlížeč)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC017 - Kontrola panelu s kontaktními údaji
+Cíl testu  Ověřit, že v levém panelu je element `.editor_mini` s kompletními informacemi o městském úřadu. 
+
+Pre-conditions:
+- Cookies již byly odmítnuty (TC004 úspěšně dokončeno) 
+¨
+Testovací kroky:
+1. Počkám, až bude viditelný element `.editor_mini`  
+   - Akce:  
+     ```robotframework
+     Wait Until Element Is Visible    css=.editor_mini    timeout=10s
+     ```
+2. Zjistím text v elementu  
+   - Akce:  
+     ```robotframework
+     ${editor_text}=    Get Text    css=.editor_mini
+     ```
+3. Ověřím, že text obsahuje „Městský úřad Dubňany“  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${editor_text}    Městský úřad Dubňany
+     ```
+4. Ověřím, že text obsahuje „IČO: 00284882“  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${editor_text}    IČO: 00284882
+     ```
+5. Ověřím, že text obsahuje „ID datové schránky: dr5bejn“  
+   - Akce:  
+     ```robotframework
+     Should Contain    ${editor_text}    ID datové schránky: dr5bejn
+     ```
+
+Očekávaný výsledek:
+- Levý panel (`.editor_mini`) obsahuje všechny očekávané informace o městském úřadu.
+
+Post-conditions:
+ - Suite Teardown: `Close Browser` (zavře prohlížeč)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC018 – Funkčnost linku 
+Testovací kroky:
+1. Seberu všechny odkazy na stránce  
+   - Akce: ` ${anchors}=    Get WebElements    xpath=//a[@href]`  
+2. Spočítám počet odkazů  
+   - Akce: ` ${count}=      Get Length        ${anchors}`  
+   - Log: `Found ${count} links on the page`  
+3. Pro každý odkaz zkusím načíst cílovou URL:  
+   FOR    ${anchor}    IN    @{anchors}  
+   &emsp;3.1. Zjistím hodnotu href  
+   &emsp;&emsp;Akce: ` ${href}=    Get Element Attribute    ${anchor}    href`  
+   &emsp;3.2. Přeskočím mailto: a javascript: odkazy  
+   &emsp;&emsp;Akce: ` Run Keyword If    "'${href}'.startswith('mailto:')"    Continue For Loop`  
+   &emsp;&emsp;Akce: ` Run Keyword If    "'${href}'.startswith('javascript:')"    Continue For Loop`  
+   &emsp;3.3. Vypíšu testovaný odkaz  
+   &emsp;&emsp;Akce: ` Log    Testing link: ${href}`  
+   &emsp;3.4. Přejdu na odkaz  
+   &emsp;&emsp;Akce: ` Go To    ${href}`  
+   &emsp;3.5. Ověřím, že titulka neobsahuje „404“  
+   &emsp;&emsp;Akce: ` Title Should Not Contain    404`  
+   &emsp;3.6. Ověřím, že aktuální URL odpovídá href  
+   &emsp;&emsp;Akce: ` Location Should Be          ${href}`  
+   &emsp;3.7. Vrátím se zpět na původní stránku  
+   &emsp;&emsp;Akce: ` Go Back`  
+   END  
+
+Očekávaný výsledek:
+- Všechny netriviální odkazy (kromě mailto: a javascript:) lze načíst bez chyby 404 a po přechodu je aktuální URL identická s hodnotou href.
+
+Post-conditions:
+- Načtená stránka je opět hlavní stránka s taby (vraceno pomocí Go Back)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC019 - Ověření sekce obsahu a fungování virtuální prohlídky
+	
+Testovací kroky:
+	1. Počkám na zobrazení hlavní sekce obsahu
+	2.Ověřím, že v této sekci existuje iframe virtuální prohlídky s očekávaným src
+	3.Ověřím, že pod tímto iframe je dostupný odkaz ke stažení návodu (PDF)
+	4.(Volitelně) Ověřím, že se odkaz otevírá v nové záložce
+
+Očekávaný výsledek:
+	Sekce #content je viditelná a obsahuje atributy role="main" a tabindex="1".
+	Uvnitř je <iframe> s src obsahujícím /data/virtualni_prohlidka/index.htm.
+	Pod iframe je odkaz ke stažení PDF návodu (Ovladani_virtualni_prohlidky.pdf), který má atribut target="_blank".

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:21:27.030256" rpa="false" schemaversion="5">
+<suite id="s1" name="015" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC015\script\015.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:27.543697" level="INFO">Opening browser 'chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>maximized=True</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:21:27.543207" elapsed="3.692216"/>
+</kw>
+<test id="s1-t1" name="TC015 Kontrola favicon loga" line="11">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:31.237209" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<msg time="2025-05-13T15:21:31.239222" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.236885" elapsed="0.037068">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</kw>
+<doc>Kontrola, že stránka obsahuje obrázek loga se src "/skins/dubnany2/images/logo.png" a alt "Oficiální stránky města Dubňany"</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.235788" elapsed="0.039274">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</test>
+<test id="s1-t2" name="TC016 Kontrola loga a odkazu" line="15">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:31.279395" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<msg time="2025-05-13T15:21:31.282030" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.278926" elapsed="0.005851">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</kw>
+<doc>Kontrola, že obrázek loga má správný alt text a odkaz vede na úvodní stránku</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.277702" elapsed="0.007746">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</test>
+<test id="s1-t3" name="TC017 Kontrola vyhledávacího pole" line="23">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:31.288143" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<msg time="2025-05-13T15:21:31.290671" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.287724" elapsed="0.004895">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</kw>
+<doc>Kontrola, že vyhledávací pole má placeholder "Hledaný výraz"</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.286847" elapsed="0.006347">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</test>
+<test id="s1-t4" name="TC018 Kontrola kontaktních údajů" line="29">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:31.295654" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<msg time="2025-05-13T15:21:31.297657" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.294769" elapsed="0.005237">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</kw>
+<doc>Kontrola, že box s kontaktními údaji obsahuje název úřadu a e-mail</doc>
+<status status="FAIL" start="2025-05-13T15:21:31.294068" elapsed="0.006856">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</test>
+<test id="s1-t5" name="TC019 Kontrola položky menu &quot;Úřad&quot;" line="36">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T15:21:31.303310" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<msg time="2025-05-13T15:21:31.305349" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698F9A]
+	(No symbol) [0x00007FF74B671B41]
+	(No symbol) [0x00007FF74B71EC2E]
+	(No symbol) [0x00007FF74B73ECC2]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]

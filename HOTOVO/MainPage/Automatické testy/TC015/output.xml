@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T13:03:16.249958" rpa="false" schemaversion="5">
+<suite id="s1" name="015" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TS015\script\015.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:16.789884" level="INFO">Opening browser 'chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>maximized=True</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:16.789269" elapsed="4.613984"/>
+</kw>
+<test id="s1-t1" name="TC015 Kontrola favicon loga" line="11">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:21.404988" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:21.404685" elapsed="2.580305"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@src='/skins/dubnany2/images/logo.png' and @alt='Oficiální stránky města Dubňany']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:23.985624" elapsed="0.034111"/>
+</kw>
+<doc>Kontrola, že stránka obsahuje obrázek loga se src "/skins/dubnany2/images/logo.png" a alt "Oficiální stránky města Dubňany"</doc>
+<status status="PASS" start="2025-05-13T13:03:21.403606" elapsed="2.616686"/>
+</test>
+<test id="s1-t2" name="TC016 Kontrola loga a odkazu" line="15">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:24.022527" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:24.022274" elapsed="2.507181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a.logo img</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.530070" elapsed="0.028283"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:26.579355" level="INFO">${logo_alt} = Oficiální stránky města Dubňany</msg>
+<var>${logo_alt}</var>
+<arg>css=a.logo img</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.558955" elapsed="0.020488"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${logo_alt}</arg>
+<arg>Oficiální stránky města Dubňany</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.580044" elapsed="0.000513"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:26.606419" level="INFO">${logo_href} = https://www.dubnany.eu/</msg>
+<var>${logo_href}</var>
+<arg>css=a.logo</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.581036" elapsed="0.025461"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${logo_href}</arg>
+<arg>${URL}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.606960" elapsed="0.000321"/>
+</kw>
+<doc>Kontrola, že obrázek loga má správný alt text a odkaz vede na úvodní stránku</doc>
+<status status="PASS" start="2025-05-13T13:03:24.021501" elapsed="2.586119"/>
+</test>
+<test id="s1-t3" name="TC017 Kontrola vyhledávacího pole" line="23">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:26.610061" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:26.609640" elapsed="2.742503"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#hledej</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:29.352701" elapsed="0.028050"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:29.401217" level="INFO">${placeholder} = Hledaný výraz</msg>
+<var>${placeholder}</var>
+<arg>css=#hledej</arg>
+<arg>placeholder</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:29.381344" elapsed="0.019953"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${placeholder}</arg>
+<arg>Hledaný výraz</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:03:29.401921" elapsed="0.000474"/>
+</kw>
+<doc>Kontrola, že vyhledávací pole má placeholder "Hledaný výraz"</doc>
+<status status="PASS" start="2025-05-13T13:03:26.608505" elapsed="2.794296"/>
+</test>
+<test id="s1-t4" name="TC018 Kontrola kontaktních údajů" line="29">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:29.404972" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:29.404736" elapsed="2.368820"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.leftbox.editor</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:31.774108" elapsed="0.026860"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:31.835288" level="INFO">${contact_text} = KONTAKT
+Městský úřad Dubňany
+Nám. 15. dubna 1149
+696 03 Dubňany
+
+IČO: 00284882
+tel.: 518 698 521
+e-mail: sekretariat@dubnany.eu
+podatelna: epodatelna@dubnany.eu
+ID datové schránky: dr5bejn
+
+     ÚŘEDN...</msg>
+<var>${contact_text}</var>
+<arg>css=.leftbox.editor</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:31.801567" elapsed="0.033810"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${contact_text}</arg>
+<arg>Městský úřad Dubňany</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:31.835870" elapsed="0.000445"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${contact_text}</arg>
+<arg>sekretariat@dubnany.eu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:31.836654" elapsed="0.000240"/>
+</kw>
+<doc>Kontrola, že box s kontaktními údaji obsahuje název úřadu a e-mail</doc>
+<status status="PASS" start="2025-05-13T13:03:29.403808" elapsed="2.433397"/>
+</test>
+<test id="s1-t5" name="TC019 Kontrola položky menu &quot;Úřad&quot;" line="36">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:31.838895" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:31.838677" elapsed="2.335830"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id='menucss2_cs']/a</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:34.175073" elapsed="0.026677"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:34.220528" level="INFO">${office_href} = https://www.dubnany.eu/urad/</msg>
+<var>${office_href}</var>
+<arg>xpath=//*[@id='menucss2_cs']/a</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:34.202267" elapsed="0.018386"/>
+</kw>
+<kw name="Should End With" owner="BuiltIn">
+<arg>${office_href}</arg>
+<arg>/urad/</arg>
+<doc>Fails if the string ``str1`` does not end with the string ``str2``.</doc>
+<status status="PASS" start="2025-05-13T13:03:34.221734" elapsed="0.000409"/>
+</kw>
+<doc>Kontrola, že hlavní menu obsahuje odkaz na sekci "Úřad"</doc>
+<status status="PASS" start="2025-05-13T13:03:31.837994" elapsed="2.384497"/>
+</test>
+<test id="s1-t6" name="TC020 Kontrola panelu s kontaktními údaji" line="42">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-13T13:03:34.224391" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:03:34.224171" elapsed="2.318004"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.editor_mini</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.542805" elapsed="0.026208"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:03:36.595169" level="INFO">${editor_text} = Městský úřad Dubňany
+Nám. 15. dubna 1149
+696 03 Dubňany
+
+IČO: 00284882
+tel.: 518 698 521
+e-mail: sekretariat@dubnany.eu
+podatelna: epodatelna@dubnany.eu
+ID datové schránky: dr5bejn
+
+     ÚŘEDNÍ HODINY...</msg>
+<var>${editor_text}</var>
+<arg>css=.editor_mini</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.569597" elapsed="0.025711"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${editor_text}</arg>
+<arg>Městský úřad Dubňany</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.595902" elapsed="0.000400"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${editor_text}</arg>
+<arg>IČO: 00284882</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.596671" elapsed="0.000250"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${editor_text}</arg>
+<arg>ID datové schránky: dr5bejn</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.597249" elapsed="0.000228"/>
+</kw>
+<doc>Kontrola, že v levém panelu existuje element .editor_mini s kompletními informacemi o městském úřadu</doc>
+<status status="PASS" start="2025-05-13T13:03:34.223414" elapsed="2.374366"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T13:03:36.599068" elapsed="2.262905"/>
+</kw>
+<status status="PASS" start="2025-05-13T13:03:16.252608" elapsed="22.609579"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="015" id="s1" pass="6" fail="0" skip="0">015</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

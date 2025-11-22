@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T13:11:49.662977" rpa="false" schemaversion="5">
+<suite id="s1" name="019" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Uřad\Automatické\TS019\Script\019.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:11:50.197373" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/urad/'.</msg>
+<arg>${URL2}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:11:50.196968" elapsed="3.188000"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T13:11:53.385341" elapsed="0.070266"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:11:53.455932" elapsed="0.019980"/>
+</kw>
+<doc>Otevře stránku Úřad města Dubňany</doc>
+<status status="PASS" start="2025-05-13T13:11:50.195777" elapsed="3.280345"/>
+</kw>
+<test id="s1-t1" name="TC000 Odstranění cookies" line="11">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:11:53.477217" elapsed="0.032088"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:11:53.510227" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:11:53.509857" elapsed="0.098342"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.609606" level="INFO">Slept 10 seconds.</msg>
+<arg>${TIMEOUT}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:11:53.608693" elapsed="10.001122"/>
+</kw>
+<doc>Zavře banner cookies</doc>
+<status status="PASS" start="2025-05-13T13:11:53.476293" elapsed="10.134152"/>
+</test>
+<test id="s1-t2" name="TC032_1 Ověření textů v levém menu Úřad" line="18">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.614124" level="INFO">${expected_items} = ['Odbory MěÚ Dubňany', 'Elektronická podatelna', 'Úřední deska', 'Platné vyhlášky a nařízení', 'Dokumenty a formuláře ke stažení', 'Povinně zveřejňované informace', 'Žádost o poskytnutí informace', 'P...</msg>
+<var>${expected_items}</var>
+<arg>Odbory MěÚ Dubňany</arg>
+<arg>Elektronická podatelna</arg>
+<arg>Úřední deska</arg>
+<arg>Platné vyhlášky a nařízení</arg>
+<arg>Dokumenty a formuláře ke stažení</arg>
+<arg>Povinně zveřejňované informace</arg>
+<arg>Žádost o poskytnutí informace</arg>
+<arg>Poskytnuté informace</arg>
+<arg>Informace o zpracování osobních údajů</arg>
+<arg>Rozpočet města</arg>
+<arg>Územní plán</arg>
+<arg>Územní studie</arg>
+<arg>Informace o výkonu sociálně-právní ochrany dětí</arg>
+<arg>Bezplatná místní autobusová doprava pro seniory</arg>
+<arg>Informace o COVID-19</arg>
+<arg>Obce pomáhají Ukrajině</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.612738" elapsed="0.001492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=aside#left nav ul li a</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.614780" elapsed="0.032097"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.658936" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.95")&gt; | &lt;selenium.webdr...</msg>
+<var>@{elements}</var>
+<arg>css=aside#left nav ul li a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.647440" elapsed="0.011615"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.659911" level="INFO">Length is 16.</msg>
+<msg time="2025-05-13T13:12:03.660077" level="INFO">${count} = 16</msg>
+<var>${count}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.659593" elapsed="0.000544"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.660976" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>16</arg>
+<arg>msg=Počet položek v menu neodpovídá očekávanému</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.660532" elapsed="0.000584"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.662523" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.95")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.662129" elapsed="0.000502"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.683154" level="INFO">${text} = Odbory MěÚ Dubňany</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.662885" elapsed="0.020349"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.683858" level="INFO">${exp} = Odbory MěÚ Dubňany</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.683500" elapsed="0.000406"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.684086" elapsed="0.000455"/>
+</kw>
+<var name="${idx}">0</var>
+<status status="PASS" start="2025-05-13T13:12:03.661902" elapsed="0.022791"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.685737" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.96")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.685317" elapsed="0.000498"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.698612" level="INFO">${text} = Elektronická podatelna</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.686069" elapsed="0.012621"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.699326" level="INFO">${exp} = Elektronická podatelna</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.698959" elapsed="0.000439"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.699976" elapsed="0.000443"/>
+</kw>
+<var name="${idx}">1</var>
+<status status="PASS" start="2025-05-13T13:12:03.685075" elapsed="0.015437"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.701153" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.97")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.700875" elapsed="0.000329"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.714646" level="INFO">${text} = Úřední deska</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.701369" elapsed="0.013357"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.715330" level="INFO">${exp} = Úřední deska</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.714993" elapsed="0.000383"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.715587" elapsed="0.000427"/>
+</kw>
+<var name="${idx}">2</var>
+<status status="PASS" start="2025-05-13T13:12:03.700733" elapsed="0.015413"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.717063" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.98")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.716655" elapsed="0.000485"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.730144" level="INFO">${text} = Platné vyhlášky a nařízení</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.717382" elapsed="0.012855"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.731093" level="INFO">${exp} = Platné vyhlášky a nařízení</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.730556" elapsed="0.000648"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.731524" elapsed="0.000610"/>
+</kw>
+<var name="${idx}">3</var>
+<status status="PASS" start="2025-05-13T13:12:03.716430" elapsed="0.015802"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.732859" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.99")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.732588" elapsed="0.000319"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.744484" level="INFO">${text} = Dokumenty a formuláře ke stažení</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.733066" elapsed="0.011495"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.745136" level="INFO">${exp} = Dokumenty a formuláře ke stažení</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.744814" elapsed="0.000368"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.745359" elapsed="0.000494"/>
+</kw>
+<var name="${idx}">4</var>
+<status status="PASS" start="2025-05-13T13:12:03.732445" elapsed="0.013520"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.746933" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.100")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.746487" elapsed="0.000532"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.773984" level="INFO">${text} = Povinně zveřejňované informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.747206" elapsed="0.026878"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.774831" level="INFO">${exp} = Povinně zveřejňované informace</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.774405" elapsed="0.000507"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.775155" elapsed="0.000548"/>
+</kw>
+<var name="${idx}">5</var>
+<status status="PASS" start="2025-05-13T13:12:03.746244" elapsed="0.029578"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.776656" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.101")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.776291" elapsed="0.000450"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.790394" level="INFO">${text} = Žádost o poskytnutí informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.777017" elapsed="0.013454"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.791076" level="INFO">${exp} = Žádost o poskytnutí informace</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.790732" elapsed="0.000391"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.791299" elapsed="0.000419"/>
+</kw>
+<var name="${idx}">6</var>
+<status status="PASS" start="2025-05-13T13:12:03.776106" elapsed="0.015873"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.792621" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.102")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.792335" elapsed="0.000337"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.805626" level="INFO">${text} = Poskytnuté informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.792834" elapsed="0.012867"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.806278" level="INFO">${exp} = Poskytnuté informace</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.805953" elapsed="0.000371"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.806515" elapsed="0.000426"/>
+</kw>
+<var name="${idx}">7</var>
+<status status="PASS" start="2025-05-13T13:12:03.792194" elapsed="0.014835"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.807630" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.103")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.807368" elapsed="0.000309"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.820410" level="INFO">${text} = Informace o zpracování osobních údajů</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.807838" elapsed="0.012648"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.821079" level="INFO">${exp} = Informace o zpracování osobních údajů</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.820744" elapsed="0.000383"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.821307" elapsed="0.000412"/>
+</kw>
+<var name="${idx}">8</var>
+<status status="PASS" start="2025-05-13T13:12:03.807231" elapsed="0.014576"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.822445" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.104")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.822140" elapsed="0.000382"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.835760" level="INFO">${text} = Rozpočet města</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.822771" elapsed="0.013066"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.836419" level="INFO">${exp} = Rozpočet města</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.836096" elapsed="0.000370"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.836646" elapsed="0.000413"/>
+</kw>
+<var name="${idx}">9</var>
+<status status="PASS" start="2025-05-13T13:12:03.822006" elapsed="0.015139"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.837746" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.105")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.837475" elapsed="0.000319"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.849379" level="INFO">${text} = Územní plán</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.837951" elapsed="0.011529"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.850062" level="INFO">${exp} = Územní plán</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.849739" elapsed="0.000370"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.850288" elapsed="0.000414"/>
+</kw>
+<var name="${idx}">10</var>
+<status status="PASS" start="2025-05-13T13:12:03.837341" elapsed="0.013449"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.851424" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.106")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.851160" elapsed="0.000312"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.863095" level="INFO">${text} = Územní studie</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.851640" elapsed="0.011527"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.863782" level="INFO">${exp} = Územní studie</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.863461" elapsed="0.000368"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.864006" elapsed="0.000395"/>
+</kw>
+<var name="${idx}">11</var>
+<status status="PASS" start="2025-05-13T13:12:03.851007" elapsed="0.013622"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.865373" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.107")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.865056" elapsed="0.000375"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.876339" level="INFO">${text} = Informace o výkonu sociálně-právní ochrany dětí</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.865602" elapsed="0.010804"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.876943" level="INFO">${exp} = Informace o výkonu sociálně-právní ochrany dětí</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.876640" elapsed="0.000351"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.877160" elapsed="0.000431"/>
+</kw>
+<var name="${idx}">12</var>
+<status status="PASS" start="2025-05-13T13:12:03.864885" elapsed="0.012795"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.878486" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.108")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.878009" elapsed="0.000533"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.889518" level="INFO">${text} = Bezplatná místní autobusová doprava pro seniory</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.878821" elapsed="0.010763"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.890202" level="INFO">${exp} = Bezplatná místní autobusová doprava pro seniory</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.889811" elapsed="0.000441"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.890429" elapsed="0.000410"/>
+</kw>
+<var name="${idx}">13</var>
+<status status="PASS" start="2025-05-13T13:12:03.877875" elapsed="0.013051"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.891538" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.109")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.891268" elapsed="0.000320"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.902866" level="INFO">${text} = Informace o COVID-19</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.891750" elapsed="0.011181"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.903447" level="INFO">${exp} = Informace o COVID-19</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.903150" elapsed="0.000342"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.903667" elapsed="0.000375"/>
+</kw>
+<var name="${idx}">14</var>
+<status status="PASS" start="2025-05-13T13:12:03.891124" elapsed="0.013023"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.904744" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.110")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.904485" elapsed="0.000306"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.915649" level="INFO">${text} = Obce pomáhají Ukrajině</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.904946" elapsed="0.010781"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.916267" level="INFO">${exp} = Obce pomáhají Ukrajině</msg>
+<var>${exp}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.915963" elapsed="0.000352"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.916510" elapsed="0.000420"/>
+</kw>
+<var name="${idx}">15</var>
+<status status="PASS" start="2025-05-13T13:12:03.904341" elapsed="0.012676"/>
+</iter>
+<var>${idx}</var>
+<value>${count}</value>
+<status status="PASS" start="2025-05-13T13:12:03.661491" elapsed="0.255610"/>
+</for>
+<doc>Kontrola, že se v levém menu zobrazují všechny očekávané položky</doc>
+<status status="PASS" start="2025-05-13T13:12:03.611667" elapsed="0.305948"/>
+</test>
+<test id="s1-t3" name="TC032_3 Ověření shody textů a odkazů v levém menu Úřad" line="48">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.919652" level="INFO">${expected_items} = ['Odbory MěÚ Dubňany', 'Elektronická podatelna', 'Úřední deska', 'Platné vyhlášky a nařízení', 'Dokumenty a formuláře ke stažení', 'Povinně zveřejňované informace', 'Žádost o poskytnutí informace', 'P...</msg>
+<var>${expected_items}</var>
+<arg>Odbory MěÚ Dubňany</arg>
+<arg>Elektronická podatelna</arg>
+<arg>Úřední deska</arg>
+<arg>Platné vyhlášky a nařízení</arg>
+<arg>Dokumenty a formuláře ke stažení</arg>
+<arg>Povinně zveřejňované informace</arg>
+<arg>Žádost o poskytnutí informace</arg>
+<arg>Poskytnuté informace</arg>
+<arg>Informace o zpracování osobních údajů</arg>
+<arg>Rozpočet města</arg>
+<arg>Územní plán</arg>
+<arg>Územní studie</arg>
+<arg>Informace o výkonu sociálně-právní ochrany dětí</arg>
+<arg>Bezplatná místní autobusová doprava pro seniory</arg>
+<arg>Informace o COVID-19</arg>
+<arg>Obce pomáhají Ukrajině</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.919352" elapsed="0.000358"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.920615" level="INFO">${expected_links} = ['https://www.dubnany.eu/urad/odbory-meu-dubnany/', 'https://www.dubnany.eu/urad/elektronicka-podatelna/', 'https://www.dubnany.eu/urad/uredni-deska/', 'https://www.dubnany.eu/urad/platne-vyhlasky-a-n...</msg>
+<var>${expected_links}</var>
+<arg>https://www.dubnany.eu/urad/odbory-meu-dubnany/</arg>
+<arg>https://www.dubnany.eu/urad/elektronicka-podatelna/</arg>
+<arg>https://www.dubnany.eu/urad/uredni-deska/</arg>
+<arg>https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/</arg>
+<arg>https://www.dubnany.eu/urad/dokumenty-a-formulare-ke-stazeni/</arg>
+<arg>https://www.dubnany.eu/urad/povinne-zverejnovane-informace/</arg>
+<arg>https://www.dubnany.eu/urad/zadost-o-poskytnuti-informace/</arg>
+<arg>https://www.dubnany.eu/urad/poskytnute-informace/</arg>
+<arg>https://www.dubnany.eu/urad/informace-o-zpracovani-osobnich-udaju/</arg>
+<arg>https://www.dubnany.eu/urad/rozpocet-mesta/</arg>
+<arg>https://www.dubnany.eu/urad/uzemni-plan/</arg>
+<arg>https://www.dubnany.eu/urad/uzemni-studie/</arg>
+<arg>https://www.dubnany.eu/urad/informace-o-vykonu-socialne-pravni-ochrany-deti/</arg>
+<arg>https://www.dubnany.eu/urad/bezplatna-mistni-autobusova-doprava-pro-seniory/</arg>
+<arg>https://www.dubnany.eu/urad/informace-o-covid-19/</arg>
+<arg>https://www.dubnany.eu/urad/obce-pomahaji-ukrajine/</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.920324" elapsed="0.000341"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=aside#left nav ul li a</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.921044" elapsed="0.021312"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.953563" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.95")&gt; | &lt;selenium.webdr...</msg>
+<var>@{elements}</var>
+<arg>css=aside#left nav ul li a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.942851" elapsed="0.010790"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.954329" level="INFO">Length is 16.</msg>
+<msg time="2025-05-13T13:12:03.954447" level="INFO">${count} = 16</msg>
+<var>${count}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.954076" elapsed="0.000412"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.955094" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>16</arg>
+<arg>msg=Počet položek v menu neodpovídá očekávanému</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.954809" elapsed="0.000382"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.956579" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.95")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.956117" elapsed="0.000519"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.968484" level="INFO">${text} = Odbory MěÚ Dubňany</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.956877" elapsed="0.011685"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.979383" level="INFO">${href} = https://www.dubnany.eu/urad/odbory-meu-dubnany/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.968868" elapsed="0.010604"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.980102" level="INFO">${exp_text} = Odbory MěÚ Dubňany</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.979737" elapsed="0.000438"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.980737" level="INFO">${exp_href} = https://www.dubnany.eu/urad/odbory-meu-dubnany/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.980427" elapsed="0.000364"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.980965" elapsed="0.000389"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.981520" elapsed="0.000331"/>
+</kw>
+<var name="${idx}">0</var>
+<status status="PASS" start="2025-05-13T13:12:03.955900" elapsed="0.026031"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:03.982567" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.96")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.982287" elapsed="0.000329"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:03.994636" level="INFO">${text} = Elektronická podatelna</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.982790" elapsed="0.011924"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.004674" level="INFO">${href} = https://www.dubnany.eu/urad/elektronicka-podatelna/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:03.994986" elapsed="0.009763"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.005333" level="INFO">${exp_text} = Elektronická podatelna</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.005007" elapsed="0.000373"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.005832" level="INFO">${exp_href} = https://www.dubnany.eu/urad/elektronicka-podatelna/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.005549" elapsed="0.000330"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.006049" elapsed="0.000396"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.006776" elapsed="0.000354"/>
+</kw>
+<var name="${idx}">1</var>
+<status status="PASS" start="2025-05-13T13:12:03.982148" elapsed="0.025065"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.008429" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.97")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.007557" elapsed="0.000922"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.019418" level="INFO">${text} = Úřední deska</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.008654" elapsed="0.010833"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.026680" level="INFO">${href} = https://www.dubnany.eu/urad/uredni-deska/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.019720" elapsed="0.007020"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.027241" level="INFO">${exp_text} = Úřední deska</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.026946" elapsed="0.000344"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.027702" level="INFO">${exp_href} = https://www.dubnany.eu/urad/uredni-deska/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.027451" elapsed="0.000294"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.027904" elapsed="0.000396"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.028470" elapsed="0.000339"/>
+</kw>
+<var name="${idx}">2</var>
+<status status="PASS" start="2025-05-13T13:12:04.007429" elapsed="0.021510"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.029788" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.98")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.029472" elapsed="0.000366"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.040677" level="INFO">${text} = Platné vyhlášky a nařízení</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.030134" elapsed="0.010610"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.048117" level="INFO">${href} = https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.040971" elapsed="0.007234"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.048743" level="INFO">${exp_text} = Platné vyhlášky a nařízení</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.048445" elapsed="0.000347"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.049283" level="INFO">${exp_href} = https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.048971" elapsed="0.000357"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.049524" elapsed="0.000384"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.050073" elapsed="0.000332"/>
+</kw>
+<var name="${idx}">3</var>
+<status status="PASS" start="2025-05-13T13:12:04.029258" elapsed="0.021228"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.051066" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.99")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.050817" elapsed="0.000295"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.061186" level="INFO">${text} = Dokumenty a formuláře ke stažení</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.051267" elapsed="0.009980"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.069194" level="INFO">${href} = https://www.dubnany.eu/urad/dokumenty-a-formulare-ke-stazeni/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.061455" elapsed="0.007805"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.069790" level="INFO">${exp_text} = Dokumenty a formuláře ke stažení</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.069485" elapsed="0.000353"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.070244" level="INFO">${exp_href} = https://www.dubnany.eu/urad/dokumenty-a-formulare-ke-stazeni/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.070000" elapsed="0.000285"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.070460" elapsed="0.000373"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.070999" elapsed="0.000328"/>
+</kw>
+<var name="${idx}">4</var>
+<status status="PASS" start="2025-05-13T13:12:04.050691" elapsed="0.020900"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.072207" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.100")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.071951" elapsed="0.000304"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.083006" level="INFO">${text} = Povinně zveřejňované informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.072435" elapsed="0.010635"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.090873" level="INFO">${href} = https://www.dubnany.eu/urad/povinne-zverejnovane-informace/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.083287" elapsed="0.007646"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.091438" level="INFO">${exp_text} = Povinně zveřejňované informace</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.091142" elapsed="0.000345"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.091902" level="INFO">${exp_href} = https://www.dubnany.eu/urad/povinne-zverejnovane-informace/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.091649" elapsed="0.000295"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.092097" elapsed="0.000387"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.092651" elapsed="0.000333"/>
+</kw>
+<var name="${idx}">5</var>
+<status status="PASS" start="2025-05-13T13:12:04.071815" elapsed="0.021249"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.093642" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.101")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.093394" elapsed="0.000295"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.103988" level="INFO">${text} = Žádost o poskytnutí informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.093849" elapsed="0.010202"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.111771" level="INFO">${href} = https://www.dubnany.eu/urad/zadost-o-poskytnuti-informace/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.104264" elapsed="0.007571"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.112346" level="INFO">${exp_text} = Žádost o poskytnutí informace</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.112049" elapsed="0.000347"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.112802" level="INFO">${exp_href} = https://www.dubnany.eu/urad/zadost-o-poskytnuti-informace/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.112559" elapsed="0.000286"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.112996" elapsed="0.000395"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.113557" elapsed="0.000328"/>
+</kw>
+<var name="${idx}">6</var>
+<status status="PASS" start="2025-05-13T13:12:04.093266" elapsed="0.020699"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.114543" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.102")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.114297" elapsed="0.000293"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.125266" level="INFO">${text} = Poskytnuté informace</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.114749" elapsed="0.010581"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.132849" level="INFO">${href} = https://www.dubnany.eu/urad/poskytnute-informace/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.125606" elapsed="0.007316"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.133534" level="INFO">${exp_text} = Poskytnuté informace</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.133219" elapsed="0.000363"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.133992" level="INFO">${exp_href} = https://www.dubnany.eu/urad/poskytnute-informace/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.133743" elapsed="0.000293"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.134212" elapsed="0.000356"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.134728" elapsed="0.000323"/>
+</kw>
+<var name="${idx}">7</var>
+<status status="PASS" start="2025-05-13T13:12:04.114171" elapsed="0.021058"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.135823" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.103")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.135566" elapsed="0.000305"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.146351" level="INFO">${text} = Informace o zpracování osobních údajů</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.136031" elapsed="0.010391"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.154132" level="INFO">${href} = https://www.dubnany.eu/urad/informace-o-zpracovani-osobnich-udaju/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.146729" elapsed="0.007462"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.154697" level="INFO">${exp_text} = Informace o zpracování osobních údajů</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.154401" elapsed="0.000346"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.155160" level="INFO">${exp_href} = https://www.dubnany.eu/urad/informace-o-zpracovani-osobnich-udaju/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.154909" elapsed="0.000295"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.155363" elapsed="0.000396"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.155926" elapsed="0.000419"/>
+</kw>
+<var name="${idx}">8</var>
+<status status="PASS" start="2025-05-13T13:12:04.135439" elapsed="0.021071"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.157168" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.104")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.156911" elapsed="0.000304"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.167444" level="INFO">${text} = Rozpočet města</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.157381" elapsed="0.010126"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.174730" level="INFO">${href} = https://www.dubnany.eu/urad/rozpocet-mesta/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.167717" elapsed="0.007074"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.175279" level="INFO">${exp_text} = Rozpočet města</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.174992" elapsed="0.000333"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.175730" level="INFO">${exp_href} = https://www.dubnany.eu/urad/rozpocet-mesta/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.175486" elapsed="0.000285"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.175923" elapsed="0.000384"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.176492" elapsed="0.000345"/>
+</kw>
+<var name="${idx}">9</var>
+<status status="PASS" start="2025-05-13T13:12:04.156775" elapsed="0.020142"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.177497" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.105")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.177247" elapsed="0.000299"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.188213" level="INFO">${text} = Územní plán</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.177708" elapsed="0.010570"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.195564" level="INFO">${href} = https://www.dubnany.eu/urad/uzemni-plan/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.188502" elapsed="0.007153"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.196144" level="INFO">${exp_text} = Územní plán</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.195856" elapsed="0.000334"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.196607" level="INFO">${exp_href} = https://www.dubnany.eu/urad/uzemni-plan/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.196348" elapsed="0.000302"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.196806" elapsed="0.000366"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.197336" elapsed="0.000354"/>
+</kw>
+<var name="${idx}">10</var>
+<status status="PASS" start="2025-05-13T13:12:04.177122" elapsed="0.020751"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.198481" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.106")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.198227" elapsed="0.000302"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.208873" level="INFO">${text} = Územní studie</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.198690" elapsed="0.010280"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.215938" level="INFO">${href} = https://www.dubnany.eu/urad/uzemni-studie/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.209199" elapsed="0.006799"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.216504" level="INFO">${exp_text} = Územní studie</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.216199" elapsed="0.000353"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.216986" level="INFO">${exp_href} = https://www.dubnany.eu/urad/uzemni-studie/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.216736" elapsed="0.000295"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.217183" elapsed="0.000392"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.217762" elapsed="0.000416"/>
+</kw>
+<var name="${idx}">11</var>
+<status status="PASS" start="2025-05-13T13:12:04.198096" elapsed="0.020228"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.218926" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.107")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.218673" elapsed="0.000301"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.229100" level="INFO">${text} = Informace o výkonu sociálně-právní ochrany dětí</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.219136" elapsed="0.010028"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.236393" level="INFO">${href} = https://www.dubnany.eu/urad/informace-o-vykonu-socialne-pravni-ochrany-deti/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.229369" elapsed="0.007087"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.237003" level="INFO">${exp_text} = Informace o výkonu sociálně-právní ochrany dětí</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.236705" elapsed="0.000347"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.237480" level="INFO">${exp_href} = https://www.dubnany.eu/urad/informace-o-vykonu-socialne-pravni-ochrany-deti/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.237214" elapsed="0.000326"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.237696" elapsed="0.000365"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.238227" elapsed="0.000403"/>
+</kw>
+<var name="${idx}">12</var>
+<status status="PASS" start="2025-05-13T13:12:04.218541" elapsed="0.020175"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.239310" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.108")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.239058" elapsed="0.000300"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.250258" level="INFO">${text} = Bezplatná místní autobusová doprava pro seniory</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.239517" elapsed="0.010821"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.257872" level="INFO">${href} = https://www.dubnany.eu/urad/bezplatna-mistni-autobusova-doprava-pro-seniory/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.250593" elapsed="0.007338"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.258428" level="INFO">${exp_text} = Bezplatná místní autobusová doprava pro seniory</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.258129" elapsed="0.000350"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.258887" level="INFO">${exp_href} = https://www.dubnany.eu/urad/bezplatna-mistni-autobusova-doprava-pro-seniory/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.258638" elapsed="0.000293"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.259083" elapsed="0.000387"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.259636" elapsed="0.000419"/>
+</kw>
+<var name="${idx}">13</var>
+<status status="PASS" start="2025-05-13T13:12:04.238928" elapsed="0.021304"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.260843" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.109")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.260586" elapsed="0.000306"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.271565" level="INFO">${text} = Informace o COVID-19</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.261052" elapsed="0.010581"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.278780" level="INFO">${href} = https://www.dubnany.eu/urad/informace-o-covid-19/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.271875" elapsed="0.006964"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.279412" level="INFO">${exp_text} = Informace o COVID-19</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.279099" elapsed="0.000361"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.280010" level="INFO">${exp_href} = https://www.dubnany.eu/urad/informace-o-covid-19/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.279679" elapsed="0.000376"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.280222" elapsed="0.000373"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.280761" elapsed="0.000359"/>
+</kw>
+<var name="${idx}">14</var>
+<status status="PASS" start="2025-05-13T13:12:04.260453" elapsed="0.020749"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.281779" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d5d29affc0370cd28a9b47b45f63670d", element="f.AF120C6CCBDB9F330C6905A3D17F25CB.d.299FB62C3C8B3CB6358607404C32DA4C.e.110")&gt;</msg>
+<var>${el}</var>
+<arg>${elements}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.281533" elapsed="0.000293"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.291666" level="INFO">${text} = Obce pomáhají Ukrajině</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.281984" elapsed="0.009745"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:12:04.298970" level="INFO">${href} = https://www.dubnany.eu/urad/obce-pomahaji-ukrajine/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.291962" elapsed="0.007068"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.299589" level="INFO">${exp_text} = Obce pomáhají Ukrajině</msg>
+<var>${exp_text}</var>
+<arg>${expected_items}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.299233" elapsed="0.000464"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T13:12:04.300152" level="INFO">${exp_href} = https://www.dubnany.eu/urad/obce-pomahaji-ukrajine/</msg>
+<var>${exp_href}</var>
+<arg>${expected_links}[${idx}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.299893" elapsed="0.000302"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${exp_text}</arg>
+<arg>msg=Text na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.300383" elapsed="0.000367"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${href}</arg>
+<arg>${exp_href}</arg>
+<arg>msg=Href na pozici ${idx} se neshoduje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.300931" elapsed="0.000327"/>
+</kw>
+<var name="${idx}">15</var>
+<status status="PASS" start="2025-05-13T13:12:04.281406" elapsed="0.019929"/>
+</iter>
+<var>${idx}</var>
+<value>${count}</value>
+<status status="PASS" start="2025-05-13T13:12:03.955470" elapsed="0.345946"/>
+</for>
+<doc>Kontrola, že text položky odpovídá správnému href podle předem daného seznamu</doc>
+<status status="PASS" start="2025-05-13T13:12:03.918597" elapsed="0.383264"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T13:12:04.303396" elapsed="2.278685"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-13T13:11:49.665766" elapsed="16.916504"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="019" id="s1" pass="3" fail="0" skip="0">019</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

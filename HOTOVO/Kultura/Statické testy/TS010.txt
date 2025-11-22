@@ -1,0 +1,163 @@
+TS010 - Testování záložky kultura
+
+
+
+
+Název testu: TC001 – Ověření funkce „Přečtení nahlas“
+
+Cíl testu:
+Ověřit, že po kliknutí na tlačítko pro přehrání textu nahlas se spustí funkce TTS (Text-to-Speech).
+
+Pre-conditions:
+- Nacházím se na hlavní stránce aplikace otevřené v prohlížeči Chrome (Suite Setup „Open Main Page“ proběhlo)
+- Proměnné `${URL6}` a `${BROWSER}` jsou nastaveny v zasazeném Resource souboru
+- Časový limit `${TIMEOUT}` je definován
+
+Testovací kroky:
+1. Kliknu na tlačítko „Přečtení nahlas“
+   - Akce: `Click Element    xpath=//*[@id="tts_wrap_0"]`
+2. Vyčkám krátkou dobu na spuštění přehrávání
+   - Akce: `Sleep    1s`
+
+Očekávaný výsledek:
+- Funkce TTS je aktivována a mělo by se začít přehrávat audio (posluchač uslyší nahlas čtený text)
+
+Post-conditions:
+- Browser session ukončena (Suite Teardown „Close Browser“)
+- Žádné změny na stránce nezůstanou (návrat do výchozího stavu)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Název testu: TC002 – Ověření, že fungují všechny odkazy
+
+Cíl ověření, že odkazy na stránce fungují
+
+Pre-conditions:
+- Nacházím se na hlavní stránce aplikace otevřené v prohlížeči Chrome (Suite Setup „Open Main Page“ proběhlo)
+- Proměnné `${URL6}` a `${BROWSER}` jsou nastaveny v zasazeném Resource souboru
+- Časový limit `${TIMEOUT}` je definován
+
+
+Testovací kroky:
+1. Ověřím, že jsem na stránce ${URL6}
+
+2. Získám seznam všech odkazů na stránce (elementy <a> s atributem href)
+	Pro každý nalezený odkaz:
+
+		- Zobrazím text odkazu a jeho URL do logu
+
+		- Kliknu na odkaz v novém tabu nebo pomocí Go To klíče
+
+		- Ověřím, že se cílová stránka načetla úspěšně (HTTP 200 nebo odpovídající obsah)
+
+		- Vrátím se zpět na původní stránku, případně zavřu aktuální tab a přepnu zpět
+
+4. Ověřím, že všechny odkazy byly úspěšně ověřeny bez chyb
+
+
+
+Očekávaný výsledek:
+ Všechny odkazy na stránce fungují, tzn. vedou na existující stránky, které se načtou bez chyby (např. 404 nebo 500)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC003 – Ověření viditelnosti a funkčnosti odkazu „Kalendář akcí“ na stránce Kultura
+
+Pre-conditions:
+ Nacházím se na stránce: [https://www.dubnany.eu/kultura/](https://www.dubnany.eu/kultura/)  
+- Cookies již byly odmítnuty
+
+
+Testovací kroky:
+
+**Testovací kroky:**
+1. Najedu myší na hlavní nabídku „Kultura“  
+2. Ověřím, že se zobrazí podmenu  
+3. Kliknu na položku „Kalendář akcí“  
+   - Akce: `Click Element    xpath=//a[@href='/kultura/kalendar-akci/']`  
+4. Ověřím, že jsem přesměrován na správnou stránku  
+   - Očekávaná URL: `https://www.dubnany.eu/kultura/kalendar-akci/`  
+   - Očekávaný text na stránce: „Kalendář akcí“ (např. jako nadpis)
+
+
+Očekávaný výsledek:
+ Kliknutí na „Kalendář akcí“ úspěšně přesměruje na stránku s odpovídajícím obsahem.  
+- Na stránce je patrný nadpis či jiný obsah související s kalendářem.
+
+
+Post-conditions:
+-Suite Teardown: `Close Browser`
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 - Testování typu akce v kalendář akcí
+
+Pre-conditions:
+	Nacházím se na https://www.dubnany.eu/kultura/kalendar-akci/
+	Cookies jsem odkliknul
+	
+Testovací kroky:
+	1. Kliknu na drop menu //*[@id="kak_typ"]
+	2. Vyberu hodnotu "Divadlo" //*[@id="kak_typ"]/option[2]
+
+Očekávaný výsledek:
+	Na stránce se objeví všechny akce, které se týkají Divadla.
+
+Post-conditions:
+	-Suite Teardown: `Close Browser`
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC005 - Testování časového omezení	
+
+Pre-conditions:
+	Otevřen prohlížeč
+	Nacházím se na stránce s filtrem akcí
+
+Testovací kroky:
+	Ověřím, že pole „od“ (date_from) má výchozí hodnotu dnešního data (13.05.2025)
+	Ověřím, že pole „do“ (date_to) má výchozí hodnotu o dva dny později (15.05.2025)
+	Kliknu na tlačítko „Filtrovat“
+	Ověřím, že byla odeslána formulářová data v URL nebo v POST (např. že parametr date_from=13.05.2025 a date_to=15.05.2025 je v query stringu)
+
+Očekávaný výsledek:
+	Pole pro datum „od“ obsahuje 13.05.2025 a pole „do“ obsahuje 15.05.2025.
+	Po stisku „Filtrovat“ se data formuláře odešlou v odpovídající podobě (parametry date_from a date_to).
+
+Post-conditions:
+	Suite Teardown: Close Browser
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC006 – Ověření přepnutí na Archiv akcí pomocí filtru
+	
+Pre-conditions:
+	- Otevřen prohlížeč  
+	- Nacházím se na stránce s filtrem akcí (např. `/kultura/kalendar-akci/`)
+
+Testovací kroky:
+	1. Ověřím, že rozbalovací pole „Zobrazit“ (`id=kak_archiv`) má dvě položky  
+   ```robotframework
+   ${count}=    Get Element Count    xpath=//select[@id='kak_archiv']/option
+   Should Be Equal    ${count}    2
+	2.Vyberu archiv akcí
+	3.Ověřím, že se položka opravdu přepnula
+	4.Kliknu na tlačítko „Filtrovat“	
+
+Očekávaný výsledek:
+	Rozbalovací pole „Zobrazit“ obsahuje oba stavy a výběr se přepne na „Archiv akcí“.
+	Po kliknutí na „Filtrovat“ je v adrese přítomen parametr archiv=1 a stránka zobrazuje archivované akce.
+
+
+Post-conditions:
+
+Suite Teardown: Close Browser
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T13:09:01.387165" rpa="false" schemaversion="5">
+<suite id="s1" name="020" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Služby\Automatické\TS020\Script\020.robot">
+<kw name="Open Browser And Prepare Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:01.905951" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/sluzby/'.</msg>
+<arg>${URL5}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:09:01.905401" elapsed="3.276772"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T13:09:05.182701" elapsed="0.078494"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:10.645746" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-13T13:09:10.646065" level="FAIL">Element 'xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]' not visible after 5 seconds.</msg>
+<arg>xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-05-13T13:09:05.262243" elapsed="5.452561">Element 'xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]' not visible after 5 seconds.</status>
+</kw>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-05-13T13:09:05.261709" elapsed="5.453293"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:10.715807" level="INFO">Clicking button 'xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]'.</msg>
+<msg time="2025-05-13T13:09:11.007892" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-13T13:09:11.008252" level="FAIL">Button with locator 'xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]' not found.</msg>
+<arg>xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-05-13T13:09:10.715533" elapsed="0.379994">Button with locator 'xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]' not found.</status>
+</kw>
+<arg>Click Button</arg>
+<arg>xpath=//button[contains(text(),'Souhlas') or contains(text(),'Rozumím')]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-05-13T13:09:10.715254" elapsed="0.380569"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:11.097109" level="INFO">Executing JavaScript:
+var xp = document.evaluate("//button[contains(text(), 'Souhlas') or contains(text(), 'Rozumím')]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);for(var i=0;i&lt;xp.snapshotLength;i++){ xp.snapshotItem(i).remove(); }document.querySelectorAll("[class*='cookie'], [id*='cookie']").forEach(function(el){el.remove();});
+Without any arguments.</msg>
+<arg>var xp = document.evaluate("//button[contains(text(), 'Souhlas') or contains(text(), 'Rozumím')]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);</arg>
+<arg>for(var i=0;i&lt;xp.snapshotLength;i++){ xp.snapshotItem(i).remove(); }</arg>
+<arg>document.querySelectorAll("[class*='cookie'], [id*='cookie']").forEach(function(el){el.remove();});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:09:11.096308" elapsed="0.011823"/>
+</kw>
+<doc>Otevře prohlížeč, načte URL a odstraní banner cookies, pokud je přítomen</doc>
+<status status="PASS" start="2025-05-13T13:09:01.904335" elapsed="9.204076"/>
+</kw>
+<test id="s1-t1" name="Title Should Be Correct" line="12">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:11.117455" level="INFO">Page title is 'Služby - Oficiální stránky města Dubňany'.</msg>
+<arg>Služby - Oficiální stránky města Dubňany</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-13T13:09:11.109724" elapsed="0.007957"/>
+</kw>
+<doc>Ověří, že se titul stránky shoduje s očekávaným</doc>
+<status status="PASS" start="2025-05-13T13:09:11.108598" elapsed="0.009697"/>
+</test>
+<test id="s1-t2" name="Menu Contains Services Link" line="16">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:11.139223" level="INFO">Current page contains element 'xpath=//nav//a[contains(text(),'Služby')]'.</msg>
+<arg>xpath=//nav//a[contains(text(),'Služby')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:09:11.120374" elapsed="0.019013"/>
+</kw>
+<doc>Ověří, že v hlavním menu je odkaz na Služby</doc>
+<status status="PASS" start="2025-05-13T13:09:11.119424" elapsed="0.020412"/>
+</test>
+<test id="s1-t3" name="Service Link Is Clickable" line="20">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:11.142058" level="INFO">Clicking link 'xpath=//*[@id="mapa_webu"]/ul/li[2]/a'.</msg>
+<arg>xpath=//*[@id="mapa_webu"]/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:09:11.141706" elapsed="1.217074"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/sluzby/mestska-knihovna/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.359292" elapsed="0.008970"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.368890" elapsed="0.248231"/>
+</kw>
+<doc>Zkontroluje, že odkaz na "Městská knihovna" funguje</doc>
+<status status="PASS" start="2025-05-13T13:09:11.140758" elapsed="1.476830"/>
+</test>
+<test id="s1-t4" name="Contact Section Is Present" line="26">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="left"]/div/div[1]/div/p[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.619398" elapsed="0.300555"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:12.942348" level="INFO">Current page contains element 'xpath=//*[@id="left"]/div/div[1]/h3/span'.</msg>
+<arg>xpath=//*[@id="left"]/div/div[1]/h3/span</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.920527" elapsed="0.021981"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:09:12.965483" level="INFO">Current page contains text 'sekretariat@dubnany.eu'.</msg>
+<arg>sekretariat@dubnany.eu</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.943073" elapsed="0.022674"/>
+</kw>
+<doc>Ověří, že je na stránce sekce Kontakt a obsahuje e-mail</doc>
+<status status="PASS" start="2025-05-13T13:09:12.618554" elapsed="0.347679"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T13:09:12.967728" elapsed="2.234367"/>
+</kw>
+<status status="PASS" start="2025-05-13T13:09:01.390341" elapsed="13.811970"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="020" id="s1" pass="4" fail="0" skip="0">020</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

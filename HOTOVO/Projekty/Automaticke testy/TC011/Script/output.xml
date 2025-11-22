@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-06-09T20:50:47.783281" rpa="false" schemaversion="5">
+<suite id="s1" name="011" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\Nová složka\MartinMega_www-dubnany-eu_13-05-25.zip  (1)\HOTOVO\Projekty\Automaticke testy\TC011\Script\011.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:48.527047" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-09T20:50:48.526280" elapsed="7.171336"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-09T20:50:55.698720" elapsed="0.113897"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-09T20:50:55.813038" elapsed="0.213816"/>
+</kw>
+<status status="PASS" start="2025-06-09T20:50:48.524446" elapsed="7.502763"/>
+</kw>
+<test id="s1-t1" name="TC012 - Otevření všech PDF odkazů v projektech" line="9">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:56.029388" level="INFO">Clicking element 'xpath=//*[@id="menucss193_cs"]/a'.</msg>
+<arg>xpath=//*[@id="menucss193_cs"]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-09T20:50:56.028980" elapsed="2.327845"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#editor_content a.file</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-09T20:50:58.357556" elapsed="0.165111"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:58.539318" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="210d706777127bc042843dd781e641e2", element="f.95A55B9401DCB5B1EB8D3E4F91B006F6.d.3A0F34383CEA1B5E5B2C5BD6FAFA97F4.e.206")&gt;, &lt;selenium.webdri...</msg>
+<var>${links}</var>
+<arg>css=#editor_content a.file</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-09T20:50:58.523350" elapsed="0.016117"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:58.554533" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_1.pdf&amp;original=Dotace%20-%20akce%207.6..pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-06-09T20:50:58.540745" elapsed="0.013923"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:58.556584" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_1.pdf&amp;original=Dotace%20-%20akce%207.6..pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-09T20:50:58.555112" elapsed="0.088564"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T20:50:59.645287" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T20:50:58.644200" elapsed="1.001346"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="210d706777127bc042843dd781e641e2", element="f.95A55B9401DCB5B1EB8D3E4F91B006F6.d.3A0F34383CEA1B5E5B2C5BD6FAFA97F4.e.206")&gt;</var>
+<status status="PASS" start="2025-06-09T20:50:58.540517" elapsed="1.105174"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:59.660059" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_2.pdf&amp;original=Podpora%20udr%C5%BEov%C3%A1n%C3%AD%20%C4%8Distoty%20cyklistick%C3%BDch%20komunikac%C3%AD%20a%20%C3%BApravyb%C4%9B%C5%BEeck%C...</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-06-09T20:50:59.646336" elapsed="0.013809"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:50:59.661312" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_2.pdf&amp;original=Podpora%20udr%C5%BEov%C3%A1n%C3%AD%20%C4%8Distoty%20cyklistick%C3%BDch%20komunikac%C3%AD%20a%20%C3%BApravyb%C4%9B%C5%BEeck%C3%BDch%20ly%C5%BEa%C5%99sk%C3%BDch%20trat%C3%AD%20v%20JmK%20v%20roce%202023.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-09T20:50:59.660430" elapsed="0.081002"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T20:51:00.742819" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T20:50:59.741749" elapsed="1.001263"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="210d706777127bc042843dd781e641e2", element="f.95A55B9401DCB5B1EB8D3E4F91B006F6.d.3A0F34383CEA1B5E5B2C5BD6FAFA97F4.e.207")&gt;</var>
+<status status="PASS" start="2025-06-09T20:50:59.646078" elapsed="1.097050"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:51:00.767497" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_4.pdf&amp;original=Pomn%C3%ADk%201.sv%C4%9Btov%C3%A9%20v%C3%A1lky.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-06-09T20:51:00.743607" elapsed="0.024018"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:51:00.769135" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_4.pdf&amp;original=Pomn%C3%ADk%201.sv%C4%9Btov%C3%A9%20v%C3%A1lky.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-09T20:51:00.768057" elapsed="0.097022"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T20:51:01.866608" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T20:51:00.865408" elapsed="1.001464"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="210d706777127bc042843dd781e641e2", element="f.95A55B9401DCB5B1EB8D3E4F91B006F6.d.3A0F34383CEA1B5E5B2C5BD6FAFA97F4.e.208")&gt;</var>
+<status status="PASS" start="2025-06-09T20:51:00.743409" elapsed="1.123635"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-06-09T20:51:01.872991" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75f80fea5+79173]
+	GetHandleVerifier [0x0x7ff75f80ff00+79264]
+	(No symbol) [0x0x7ff75f5c9e5a]
+	(No symbol) [0x0x7ff75f5b5c25]
+	(No symbol) [0x0x7ff75f5dac44]
+	(No symbol) [0x0x7ff75f6503c5]
+	(No symbol) [0x0x7ff75f670922]
+	(No symbol) [0x0x7ff75f648743]
+	(No symbol) [0x0x7ff75f6114c1]
+	(No symbol) [0x0x7ff75f612253]
+	GetHandleVerifier [0x0x7ff75fada2dd+3004797]
+	GetHandleVerifier [0x0x7ff75fad472d+2981325]
+	GetHandleVerifier [0x0x7ff75faf3380+3107360]
+	GetHandleVerifier [0x0x7ff75f82aa2e+188622]
+	GetHandleVerifier [0x0x7ff75f8322bf+219487]
+	GetHandleVerifier [0x0x7ff75f818df4+115860]
+	GetHandleVerifier [0x0x7ff75f818fa9+116297]
+	GetHandleVerifier [0x0x7ff75f7ff558+11256]
+	BaseThreadInitThunk [0x0x7ffb9f8be8d7+23]
+	RtlUserThreadStart [0x0x7ffba089c34c+44]
+</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="FAIL" start="2025-06-09T20:51:01.867689" elapsed="0.203939">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75f80fea5+79173]
+	GetHandleVerifier [0x0x7ff75f80ff00+79264]
+	(No symbol) [0x0x7ff75f5c9e5a]
+	(No symbol) [0x0x7ff75f5b5c25]
+	(No symbol) [0x0x7ff75f5dac44]
+	(No symbol) [0x0x7ff75f6503c5]
+	(No symbol) [0x0x7ff75f670922]
+	(No symbol) [0x0x7ff75f648743]
+	(No symbol) [0x0x7ff75f6114c1]
+	(No symbol) [0x0x7ff75f612253]
+	GetHandleVerifier [0x0x7ff75fada2dd+3004797]
+	GetHandleVerifier [0x0x7ff75fad472d+2981325]
+	GetHandleVerifier [0x0x7ff75faf3380+3107360]
+	GetHandleVerifier [0x0x7ff75f82aa2e+188622]
+	GetHandleVerifier [0x0x7ff75f8322bf+219487]
+	GetHandleVerifier [0x0x7ff75f818df4+115860]
+	GetHandleVerifier [0x0x7ff75f818fa9+116297]
+	GetHandleVerifier [0x0x7ff75f7ff558+11256]
+	BaseThreadInitThunk [0x0x7ffb9f8be8d7+23]
+	RtlUserThreadStart [0x0x7ffba089c34c+44]
+</status>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-06-09T20:51:02.072010" elapsed="0.000095"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-06-09T20:51:02.072352" elapsed="0.000054"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="210d706777127bc042843dd781e641e2", element="f.95A55B9401DCB5B1EB8D3E4F91B006F6.d.3A0F34383CEA1B5E5B2C5BD6FAFA97F4.e.184")&gt;</var>
+<status status="FAIL" start="2025-06-09T20:51:01.867404" elapsed="0.205143">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75f80fea5+79173]
+	GetHandleVerifier [0x0x7ff75f80ff00+79264]
+	(No symbol) [0x0x7ff75f5c9e5a]
+	(No symbol) [0x0x7ff75f5b5c25]
+	(No symbol) [0x0x7ff75f5dac44]
+	(No symbol) [0x0x7ff75f6503c5]
+	(No symbol) [0x0x7ff75f670922]
+	(No symbol) [0x0x7ff75f648743]
+	(No symbol) [0x0x7ff75f6114c1]
+	(No symbol) [0x0x7ff75f612253]
+	GetHandleVerifier [0x0x7ff75fada2dd+3004797]
+	GetHandleVerifier [0x0x7ff75fad472d+2981325]
+	GetHandleVerifier [0x0x7ff75faf3380+3107360]
+	GetHandleVerifier [0x0x7ff75f82aa2e+188622]
+	GetHandleVerifier [0x0x7ff75f8322bf+219487]
+	GetHandleVerifier [0x0x7ff75f818df4+115860]
+	GetHandleVerifier [0x0x7ff75f818fa9+116297]
+	GetHandleVerifier [0x0x7ff75f7ff558+11256]
+	BaseThreadInitThunk [0x0x7ffb9f8be8d7+23]
+	RtlUserThreadStart [0x0x7ffba089c34c+44]
+</status>
+</iter>
+<var>${el}</var>
+<value>@{links}</value>
+<status status="FAIL" start="2025-06-09T20:50:58.539980" elapsed="3.532734">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75f80fea5+79173]
+	GetHandleVerifier [0x0x7ff75f80ff00+79264]
+	(No symbol) [0x0x7ff75f5c9e5a]
+	(No symbol) [0x0x7ff75f5b5c25]
+	(No symbol) [0x0x7ff75f5dac44]
+	(No symbol) [0x0x7ff75f6503c5]
+	(No symbol) [0x0x7ff75f670922]
+	(No symbol) [0x0x7ff75f648743]
+	(No symbol) [0x0x7ff75f6114c1]
+	(No symbol) [0x0x7ff75f612253]
+	GetHandleVerifier [0x0x7ff75fada2dd+3004797]
+	GetHandleVerifier [0x0x7ff75fad472d+2981325]
+	GetHandleVerifier [0x0x7ff75faf3380+3107360]
+	GetHandleVerifier [0x0x7ff75f82aa2e+188622]
+	GetHandleVerifier [0x0x7ff75f8322bf+219487]
+	GetHandleVerifier [0x0x7ff75f818df4+115860]
+	GetHandleVerifier [0x0x7ff75f818fa9+116297]
+	GetHandleVerifier [0x0x7ff75f7ff558+11256]
+	BaseThreadInitThunk [0x0x7ffb9f8be8d7+23]
+	RtlUserThreadStart [0x0x7ffba089c34c+44]
+</status>
+</for>
+<status status="FAIL" start="2025-06-09T20:50:56.027476" elapsed="6.046013">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75f80fea5+79173]
+	GetHandleVerifier [0x0x7ff75f80ff00+79264]
+	(No symbol) [0x0x7ff75f5c9e5a]
+	(No symbol) [0x0x7ff75f5b5c25]
+	(No symbol) [0x0x7ff75f5dac44]
+	(No symbol) [0x0x7ff75f6503c5]
+	(No symbol) [0x0x7ff75f670922]
+	(No symbol) [0x0x7ff75f648743]
+	(No symbol) [0x0x7ff75f6114c1]
+	(No symbol) [0x0x7ff75f612253]
+	GetHandleVerifier [0x0x7ff75fada2dd+3004797]
+	GetHandleVerifier [0x0x7ff75fad472d+2981325]
+	GetHandleVerifier [0x0x7ff75faf3380+3107360]
+	GetHandleVerifier [0x0x7ff75f82aa2e+188622]
+	GetHandleVerifier [0x0x7ff75f8322bf+219487]
+	GetHandleVerifier [0x0x7ff75f818df4+115860]
+	GetHandleVerifier [0x0x7ff75f818fa9+116297]
+	GetHandleVerifier [0x0x7ff75f7ff558+11256]
+	BaseThreadInitThunk [0x0x7ffb9f8be8d7+23]
+	RtlUserThreadStart [0x0x7ffba089c34c+44]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-09T20:51:02.076148" elapsed="2.108286"/>
+</kw>
+<status status="FAIL" start="2025-06-09T20:50:47.788022" elapsed="16.396654"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="011" id="s1" pass="0" fail="1" skip="0">011</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

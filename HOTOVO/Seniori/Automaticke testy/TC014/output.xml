@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T13:08:16.533769" rpa="false" schemaversion="5">
+<suite id="s1" name="014" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Seniori\Automaticke testy\TS014\script\014.robot">
+<kw name="Open Seniors Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:17.087496" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/seniori/'.</msg>
+<arg>${URL3}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:08:17.087032" elapsed="2.460075"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T13:08:19.547480" elapsed="0.057496"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=h1.snr-h1</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:08:19.605283" elapsed="0.033946"/>
+</kw>
+<doc>Otevře místní soubor seniorské verze</doc>
+<status status="PASS" start="2025-05-13T13:08:17.085930" elapsed="2.553503"/>
+</kw>
+<test id="s1-t1" name="TC014 – Ověření ovládání velikosti písma" line="11">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=but_big</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:08:19.640551" elapsed="0.029501"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:19.671126" level="INFO">Clicking element 'id=but_big'.</msg>
+<arg>id=but_big</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:08:19.670704" elapsed="0.117931"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:08:20.789962" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:08:19.789143" elapsed="1.001083"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:20.791433" level="INFO">Verifying element 'id=font_size' contains exact text '110 %'.</msg>
+<arg>id=font_size</arg>
+<arg>110 %</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:20.790960" elapsed="0.034994"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:20.826786" level="INFO">Clicking element 'id=but_small'.</msg>
+<arg>id=but_small</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:08:20.826440" elapsed="0.079381"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:08:21.907414" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:08:20.906471" elapsed="1.001131"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:21.908545" level="INFO">Verifying element 'id=font_size' contains exact text '100 %'.</msg>
+<arg>id=font_size</arg>
+<arg>100 %</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:21.908180" elapsed="0.020583"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:21.929712" level="INFO">Clicking element 'id=but_big'.</msg>
+<arg>id=but_big</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:08:21.929349" elapsed="0.074860"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:22.005082" level="INFO">Clicking element 'id=but_def'.</msg>
+<arg>id=but_def</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:08:22.004760" elapsed="0.087606"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:08:23.094077" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:08:22.093005" elapsed="1.001311"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.096134" level="INFO">Verifying element 'id=font_size' contains exact text '100 %'.</msg>
+<arg>id=font_size</arg>
+<arg>100 %</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.095203" elapsed="0.023757"/>
+</kw>
+<doc>Testuje tlačítka zvětšení, zmenšení a resetu písma</doc>
+<status status="PASS" start="2025-05-13T13:08:19.639602" elapsed="3.479834"/>
+</test>
+<test id="s1-t2" name="TC015 – Kontrola základních karet v seznamu" line="25">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=polozky_list</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.121243" elapsed="0.023131"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.159423" level="INFO">Current page contains element 'id=sec_detail_href_1'.</msg>
+<arg>id=sec_detail_href_1</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.144873" elapsed="0.014707"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.174163" level="INFO">Current page contains element 'id=sec_detail_href_2'.</msg>
+<arg>id=sec_detail_href_2</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.160077" elapsed="0.014242"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.188767" level="INFO">Current page contains element 'id=sec_detail_href_11'.</msg>
+<arg>id=sec_detail_href_11</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.174813" elapsed="0.014241"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.189960" level="INFO">Verifying element 'xpath=//a[@id="sec_detail_href_1"]//div[@class="card-title"]' contains exact text 'Úřední deska'.</msg>
+<arg>xpath=//a[@id="sec_detail_href_1"]//div[@class="card-title"]</arg>
+<arg>Úřední deska</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.189630" elapsed="0.025521"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.216002" level="INFO">Verifying element 'xpath=//a[@id="sec_detail_href_2"]//div[@class="card-title"]' contains exact text 'Sportovní spolky'.</msg>
+<arg>xpath=//a[@id="sec_detail_href_2"]//div[@class="card-title"]</arg>
+<arg>Sportovní spolky</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.215640" elapsed="0.025367"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.241811" level="INFO">Verifying element 'xpath=//a[@id="sec_detail_href_11"]//div[@class="card-title"]' contains exact text 'Kontakt'.</msg>
+<arg>xpath=//a[@id="sec_detail_href_11"]//div[@class="card-title"]</arg>
+<arg>Kontakt</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.241485" elapsed="0.024003"/>
+</kw>
+<doc>Ověřuje, že se zobrazují karty „Úřední deska“, „Sportovní spolky“ a „Kontakt"</doc>
+<status status="PASS" start="2025-05-13T13:08:23.120174" elapsed="0.145818"/>
+</test>
+<test id="s1-t3" name="TC016 – Ověření přepnutí na standardní web" line="36">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a.snr-home-link</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.267872" elapsed="0.022142"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:23.290799" level="INFO">Clicking element 'css=a.snr-home-link'.</msg>
+<arg>css=a.snr-home-link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:08:23.290491" elapsed="2.938855"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:08:27.230890" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:08:26.230028" elapsed="1.001050"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:27.241604" level="INFO">${loc} = https://www.dubnany.eu/</msg>
+<var>${loc}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-05-13T13:08:27.231780" elapsed="0.009900"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${loc}</arg>
+<arg>/seniori/</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-13T13:08:27.242128" elapsed="0.000446"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:08:27.268840" level="INFO">Current page contains text 'Město Dubňany'.</msg>
+<arg>Město Dubňany</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-13T13:08:27.242972" elapsed="0.026025"/>
+</kw>
+<doc>Kliknutí na odkaz „Přepnout na standardní web“ a kontrola URL</doc>
+<status status="PASS" start="2025-05-13T13:08:23.266981" elapsed="4.002508"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T13:08:27.271264" elapsed="2.287251"/>
+</kw>
+<doc>Nezávazné testy pro seniorskou verzi Dubňan</doc>
+<status status="PASS" start="2025-05-13T13:08:16.536507" elapsed="13.022161"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="014" id="s1" pass="3" fail="0" skip="0">014</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

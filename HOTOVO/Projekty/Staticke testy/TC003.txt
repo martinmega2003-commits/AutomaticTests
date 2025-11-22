@@ -1,0 +1,103 @@
+TS003 - Testovani projektu
+
+
+TC001 - Otevření všech PDF odkazů v sekci Projekty
+Cíl testu: Ověřit, že všechny PDF odkazy uvedené v sekci „Projekty“ jsou funkční a otevřou se v nových panelech.
+
+Pre-conditions:
+- Otevřená výchozí stránka: [https://www.dubnany.eu](https://www.dubnany.eu)
+- Použit prohlížeč: Chrome
+- Cookies lišta není zobrazena, nebo již byla odmítnuta.
+- Uživatel má přístup k JavaScriptu pro otevírání nových oken.
+
+1. Kliknu na položku menu „Projekty“  
+   `Click Element    xpath=//*[@id="menucss193_cs"]/a`
+
+2. Počkám, dokud nejsou zobrazeny všechny odkazy na soubory (PDF)  
+   `Wait Until Element Is Visible    css=#editor_content a.file    timeout=${TIMEOUT}`
+
+3. Získám seznam všech odkazů na PDF  
+   `Get WebElements    css=#editor_content a.file`
+
+4. Pro každý nalezený odkaz:
+    - Získám hodnotu `href` (odkaz na PDF)  
+      `Get Element Attribute    ${el}    href`
+    - Otevřu PDF v novém panelu pomocí JavaScriptu  
+      `Execute JavaScript    window.open("${href}", "_blank")`
+    - Počkám 1 sekundu  
+      `Sleep    1s`
+
+
+Očekávaný výsledek:
+- Všechny odkazy na PDF se otevřou v nových panelech bez chyby.
+- Odkazy nejsou mrtvé a odkazují na existující soubory.
+
+Post-conditions:
+- Všechny soubory zůstanou otevřeny v prohlížeči v nových panelech.
+- Prohlížeč bude uzavřen pomocí `Suite Teardown`.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 -  – Ověření načtení stránky „Projekty“ a viditelnosti hlavního nadpisu
+
+Pre-conditions:
+ Uživatelský prohlížeč je otevřen  
+- Cookies byly odmítnuty nebo schváleny
+
+Testovací kroky:
+1. Otevřu stránku `https://www.dubnany.eu/projekty/`  
+2. Ověřím, že se stránka načetla bez chyb (HTTP 200 OK)  
+3. Ověřím, že se na stránce nachází hlavní nadpis „Projekty“  
+   - Lokátor: `xpath=//h1/a/span[contains(text(), 'Projekty')]`
+
+Očekávaný výsledek:
+Stránka „Projekty“ se načte korektně  
+- Hlavní nadpis „Projekty“ je viditelný a odpovídá obsahu stránky
+
+Post-conditions:
+Suite Teardown: `Close Browser`
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC003 - Ověření funkčnosti návratu na hlavní stránku přes kliknutí na logo
+
+Pre-conditions:
+	- Nacházím se na stránce `https://www.dubnany.eu/projekty/`
+
+Testovací kroky:
+1. Najdu element loga města v hlavičce stránky  
+   - Lokátor: `xpath=//a[@class='logo']`  
+2. Kliknu na logo  
+   - Akce: `Click Element    xpath=//a[@class='logo']`  
+3. Ověřím, že jsem přesměrován na hlavní stránku `https://www.dubnany.eu/`  
+4. Ověřím, že hlavní stránka obsahuje očekávané prvky (např. menu, sekci aktualit)
+
+Očekávaný výsledek:
+Kliknutí na logo přesměruje na hlavní stránku města  
+- Na hlavní stránce je zobrazen příslušný obsah
+
+Post-conditions:
+	- Budu se nacházet na hlavní stránce
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 -  Ověření existence odkazu „Rovnou na obsah“
+
+Pre-conditions:
+	Nacházím se na stránce `https://www.dubnany.eu/projekty/`
+
+Testovací kroky:
+1. Ověřím, že existuje odkaz s textem „Rovnou na obsah“  
+   - Lokátor: `xpath=//a[contains(@href, '#content-link') and contains(text(), 'Rovnou na obsah')]`  
+2. Kliknu na odkaz  
+   - Akce: `Click Element    xpath=//a[contains(@href, '#content-link')]`  
+3. Ověřím, že se stránka posune na příslušnou sekci s ID `content-link` (např. kontrola scroll pozice nebo existence anchoru)
+
+Očekávaný výsledek:
+- Po kliknutí na odkaz se uživatel přesune na stránku projekt
+
+Post-conditions:
+	Suite Teardown: `Close Browser`
+
+
+

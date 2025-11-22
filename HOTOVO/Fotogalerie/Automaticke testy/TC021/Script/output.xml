@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:17:45.042477" rpa="false" schemaversion="5">
+<suite id="s1" name="021" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Fotogalerie\Automaticke testy\TC021\Script\021.robot">
+<kw name="Open Browser To Fotogalerie" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:45.566440" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/fotogalerie-1/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:17:45.566015" elapsed="3.109048"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:17:48.675447" elapsed="0.071430"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:17:45.564783" elapsed="3.182315"/>
+</kw>
+<test id="s1-t1" name="Test Fotogalerie Links Are Reachable" line="42">
+<kw name="Go To Fotogalerie Page" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:48.748984" level="INFO">Opening url 'https://www.dubnany.eu/fotogalerie-1/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:17:48.748742" elapsed="0.949272"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:nav#menu ul.root li a</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.698316" elapsed="0.017162"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:17:48.748251" elapsed="0.967431"/>
+</kw>
+<kw name="Check That All Fotogalerie Links Open">
+<kw name="Get Fotogalerie Links">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.728158" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.97")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>css:nav#menu ul.root li a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.717188" elapsed="0.011058"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-13T15:17:49.728805" level="INFO">@{links} = [ ]</msg>
+<var>@{links}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.728523" elapsed="0.000331"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.740590" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2025/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.729468" elapsed="0.011238"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.741058" elapsed="0.000338"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.97")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.729292" elapsed="0.012193"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.751450" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2024/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.741912" elapsed="0.009616"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.751785" elapsed="0.000289"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.98")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.741742" elapsed="0.010412"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.760633" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2023/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.752504" elapsed="0.008201"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.760944" elapsed="0.000288"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.99")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.752357" elapsed="0.008957"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.768564" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2022/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.761654" elapsed="0.006969"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.768813" elapsed="0.000246"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.100")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.761506" elapsed="0.007630"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.777272" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2021/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.769446" elapsed="0.007904"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.777610" elapsed="0.000285"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.101")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.769306" elapsed="0.008669"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.785481" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2020/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.778320" elapsed="0.007221"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.785733" elapsed="0.000258"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.102")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.778165" elapsed="0.007905"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.794735" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2019/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.786678" elapsed="0.008133"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.795056" elapsed="0.000278"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.103")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.786523" elapsed="0.008890"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.803541" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2018/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.795768" elapsed="0.007843"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.803827" elapsed="0.000262"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.104")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.795619" elapsed="0.008550"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.812727" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2017/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.804499" elapsed="0.008306"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.813087" elapsed="0.000289"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.105")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.804355" elapsed="0.009104"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.821122" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2016/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.813804" elapsed="0.007381"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.821383" elapsed="0.000256"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.106")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.813648" elapsed="0.008072"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.829567" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2013/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.822068" elapsed="0.007573"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.829884" elapsed="0.000273"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="736d2ddb4d5efad78dcd0ec2cee598a2", element="f.677BA60FBA6F005AEAB1E4D0239441EE.d.56353E65AC614381D5B3DDA13DB4CCA0.e.107")&gt;</var>
+<status status="PASS" start="2025-05-13T15:17:49.821925" elapsed="0.008311"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-05-13T15:17:49.728979" elapsed="0.101343"/>
+</for>
+<return>
+<value>${links}</value>
+<status status="PASS" start="2025-05-13T15:17:49.830454" elapsed="0.000143"/>
+</return>
+<msg time="2025-05-13T15:17:49.830868" level="INFO">${links} = ['https://www.dubnany.eu/fotogalerie-1/rok-2025/', 'https://www.dubnany.eu/fotogalerie-1/rok-2024/', 'https://www.dubnany.eu/fotogalerie-1/rok-2023/', 'https://www.dubnany.eu/fotogalerie-1/rok-2022/',...</msg>
+<var>${links}</var>
+<status status="PASS" start="2025-05-13T15:17:49.716845" elapsed="0.114074"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:17:49.831640" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2025/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.831420" elapsed="0.000293"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:49.832448" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2025/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.831876" elapsed="0.056204"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.888380" elapsed="0.015477"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:49.904147" elapsed="0.986130"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:50.897507" level="INFO">${title} = Rok 2025 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.890571" elapsed="0.007010"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:17:50.898062" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.897810" elapsed="0.000336"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.898312" elapsed="0.003479"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2025/</var>
+<status status="PASS" start="2025-05-13T15:17:49.831277" elapsed="1.070609"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:17:50.902495" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2024/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.902271" elapsed="0.000296"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:50.903314" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2024/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.902732" elapsed="0.052456"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.955493" elapsed="0.015114"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:50.970893" elapsed="2.431572"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:53.408825" level="INFO">${title} = Rok 2024 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.402763" elapsed="0.006133"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:17:53.409352" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.409113" elapsed="0.000313"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.409591" elapsed="0.003750"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2024/</var>
+<status status="PASS" start="2025-05-13T15:17:50.902115" elapsed="2.511313"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:17:53.414004" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2023/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.413795" elapsed="0.000304"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:53.414787" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2023/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.414266" elapsed="0.054784"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.469359" elapsed="0.016646"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:53.486293" elapsed="4.406635"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:57.899058" level="INFO">${title} = Rok 2023 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.893224" elapsed="0.005907"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:17:57.899592" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.899352" elapsed="0.000313"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.899829" elapsed="0.002924"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2023/</var>
+<status status="PASS" start="2025-05-13T15:17:53.413652" elapsed="4.489187"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:17:57.903413" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2022/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.903204" elapsed="0.000282"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:57.904196" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2022/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.903648" elapsed="0.052009"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.955956" elapsed="0.015346"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:57.971590" elapsed="4.171819"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:02.149579" level="INFO">${title} = Rok 2022 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.143706" elapsed="0.005943"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:02.150114" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.149873" elapsed="0.000315"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.150351" elapsed="0.002912"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2022/</var>
+<status status="PASS" start="2025-05-13T15:17:57.903059" elapsed="4.250290"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:02.153922" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2021/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.153714" elapsed="0.000281"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:02.154722" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2021/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.154159" elapsed="0.056230"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.210690" elapsed="0.012666"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:02.223757" elapsed="1.620062"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:03.849549" level="INFO">${title} = Rok 2021 - Pavel Šporcl - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.844186" elapsed="0.005429"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:03.850042" level="INFO">Length is 57.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.849812" elapsed="0.000304"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.850318" elapsed="0.002821"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2021/</var>
+<status status="PASS" start="2025-05-13T15:18:02.153571" elapsed="1.699749"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:03.853900" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2020/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.853694" elapsed="0.000278"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:03.854690" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2020/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.854136" elapsed="0.054355"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.908792" elapsed="0.012497"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:03.921562" elapsed="1.580305"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:05.507781" level="INFO">${title} = Rok 2020 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.502167" elapsed="0.005687"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:05.508311" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.508075" elapsed="0.000310"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.508549" elapsed="0.002934"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2020/</var>
+<status status="PASS" start="2025-05-13T15:18:03.853553" elapsed="1.658016"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:05.512141" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2019/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.511935" elapsed="0.000278"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:05.512927" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2019/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.512375" elapsed="0.054573"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.567258" elapsed="0.019749"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:05.587300" elapsed="3.830566"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:09.423361" level="INFO">${title} = Rok 2019 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.418164" elapsed="0.005265"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:09.423935" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.423665" elapsed="0.000346"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.424216" elapsed="0.003363"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2019/</var>
+<status status="PASS" start="2025-05-13T15:18:05.511794" elapsed="3.915881"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:09.428306" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2018/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.428077" elapsed="0.000306"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:09.429125" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2018/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.428555" elapsed="0.054698"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.483563" elapsed="0.019494"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:09.503347" elapsed="3.248612"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:12.757760" level="INFO">${title} = Rok 2018 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.752262" elapsed="0.005564"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:12.758256" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.758026" elapsed="0.000306"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.758513" elapsed="0.003035"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2018/</var>
+<status status="PASS" start="2025-05-13T15:18:09.427917" elapsed="3.333717"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:12.762203" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2017/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.761996" elapsed="0.000279"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:12.762986" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2017/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.762438" elapsed="0.055607"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.818340" elapsed="0.021771"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:12.840410" elapsed="2.053000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:14.899528" level="INFO">${title} = Rok 2017 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.893721" elapsed="0.005874"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:14.900037" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.899804" elapsed="0.000310"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.900273" elapsed="0.002806"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2017/</var>
+<status status="PASS" start="2025-05-13T15:18:12.761855" elapsed="2.141309"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:14.903736" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2016/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.903527" elapsed="0.000283"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:14.904529" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2016/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.903974" elapsed="0.056876"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.961153" elapsed="0.019511"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:14.980953" elapsed="1.469641"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:16.456202" level="INFO">${title} = Rok 2016 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.450891" elapsed="0.005376"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:16.456722" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.456465" elapsed="0.000331"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.456983" elapsed="0.003408"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2016/</var>
+<status status="PASS" start="2025-05-13T15:18:14.903384" elapsed="1.557108"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T15:18:16.461133" level="INFO">Testuji odkaz: https://www.dubnany.eu/fotogalerie-1/rok-2013/</msg>
+<arg>Testuji odkaz: ${link}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.460900" elapsed="0.000307"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:16.462010" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/fotogalerie-1/rok-2013/", "_blank");
+Without any arguments.</msg>
+<arg>window.open("${link}", "_blank");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.461374" elapsed="0.055632"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.517304" elapsed="0.022343"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:16.539947" elapsed="0.906435"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:18:17.452359" level="INFO">${title} = Rok 2013 - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T15:18:17.446680" elapsed="0.005742"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T15:18:17.452849" level="INFO">Length is 42.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T15:18:17.452619" elapsed="0.000306"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:17.453082" elapsed="0.003011"/>
+</kw>
+<var name="${link}">https://www.dubnany.eu/fotogalerie-1/rok-2013/</var>
+<status status="PASS" start="2025-05-13T15:18:16.460730" elapsed="0.995450"/>
+</iter>
+<var>${link}</var>
+<value>@{links}</value>
+<status status="PASS" start="2025-05-13T15:17:49.831031" elapsed="27.625238"/>
+</for>
+<status status="PASS" start="2025-05-13T15:17:49.716325" elapsed="27.740106"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:17:48.747248" elapsed="28.709722"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:18:17.458408" elapsed="2.257149"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:17:45.045673" elapsed="34.670077"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="021" id="s1" pass="1" fail="0" skip="0">021</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-13T15:17:45.034872" level="WARN">Error in file 'C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Fotogalerie\Automaticke testy\TC021\Script\021.robot' on line 27: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

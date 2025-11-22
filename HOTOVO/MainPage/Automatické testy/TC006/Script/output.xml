@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:20:33.104715" rpa="false" schemaversion="5">
+<suite id="s1" name="006" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC006\Script\006.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:33.622153" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:20:33.621657" elapsed="4.478501"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.100529" elapsed="0.062073"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.162928" elapsed="0.037373"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-13T15:20:33.620621" elapsed="4.579919"/>
+</kw>
+<test id="s1-t1" name="TC006 Senioři" line="12">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.201729" elapsed="0.033589"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:38.236191" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.235856" elapsed="0.125459"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T15:20:38.362750" level="INFO">${senior_link} = xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]</msg>
+<var>${senior_link}</var>
+<arg>xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.362277" elapsed="0.000542"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${senior_link}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.363269" elapsed="0.049275"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${senior_link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.413053" elapsed="0.290674"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T15:20:41.704675" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T15:20:38.704254" elapsed="3.000642"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:41.705905" level="INFO">Clicking element 'xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]'.</msg>
+<arg>${senior_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:41.705537" elapsed="0.164394"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T15:20:44.871213" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T15:20:41.870689" elapsed="3.000762"/>
+</kw>
+<doc>Ověří funkčnost zjednodušené verze pro seniory</doc>
+<status status="PASS" start="2025-05-13T15:20:38.200699" elapsed="6.671298"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:20:44.873590" elapsed="2.279301"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-13T15:20:33.107519" elapsed="14.045591"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="006" id="s1" pass="1" fail="0" skip="0">006</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

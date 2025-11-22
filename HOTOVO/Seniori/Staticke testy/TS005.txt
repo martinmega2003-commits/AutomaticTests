@@ -1,0 +1,107 @@
+TS005 - senioři
+
+TC001 – Ověření ovládání velikosti písma
+
+Cíl:
+Otestovat funkčnost ovládacích prvků pro zvětšení, zmenšení a reset velikosti písma.
+
+Pre-conditions:
+	Stránka je načtena https://www.dubnany.eu/seniori/
+	- Používám prohlížeč Chrome.
+
+
+Kroky:
+1. Počkat, až se zobrazí tlačítko `Zvětšit písmo` (`id=but_big`)
+2. Kliknout na `Zvětšit`
+3. Ověřit, že hodnota fontu je `110 %`
+4. Kliknout na `Zmenšit`
+5. Ověřit, že hodnota fontu je `100 %`
+6. Znovu kliknout na `Zvětšit`, pak `Reset`
+7. Ověřit, že hodnota fontu je opět `100 %`
+
+Očekávaný výsledek:
+	Otestování funkčnosti zvětšení fontu
+Post-conditions:
+	Stránka se zavře
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC002 – Kontrola základních karet v seznamu
+
+Cíl:
+Zjistit, zda jsou na stránce dostupné a správně popsané klíčové informační karty.
+
+Kroky:
+1. Očekávat zobrazení hlavního seznamu (`id=polozky_list`)
+2. Zkontrolovat přítomnost následujících elementů:
+   - `sec_detail_href_1` (Úřední deska)
+   - `sec_detail_href_2` (Sportovní spolky)
+   - `sec_detail_href_11` (Kontakt)
+3. Ověřit přesný text nadpisu každé karty:
+   - Úřední deska
+   - Sportovní spolky
+   - Kontakt
+Očekávaný výsledek:
+	Ověřím jestli jsou na stránce správně popsané informační karty
+Post-Conditions:
+	Nacházíme se na stránce https://www.dubnany.eu/seniori/
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC003 - Ověření přepnutí na standardní web
+
+Cíl:
+Otestovat funkci odkazu „Přepnout na standardní web“ a ověřit, že přechod proběhl správně.
+
+Kroky:
+1. Vyhledat a kliknout na odkaz `a.snr-home-link`
+2. Po přesměrování ověřit, že URL již **neobsahuje `/seniori/`**
+3. Stránka by měla obsahovat text `Město Dubňany` 
+
+Očekávaný výsledek:
+Tlačítko funguje a přesune nás na hlavní stránku
+
+Post-conditions: 
+	Nacházíme se na hlavní stránce 
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC04 - Ověření přítomnosti textového odstavce v seznamu položek na stránce pro seniory
+Pre-conditions:
+Otevřen prohlížeč  
+- Nacházím se na URL: `https://www.dubnany.eu/seniori/`
+
+*Testovací kroky:*
+
+1. Načtu stránku `https://www.dubnany.eu/seniori/`  
+2. Ověřím, že je přítomný element s následujícím XPath:  //*[@id="polozky_seznam"]/div[2]/div[1]/p
+3. Zkontroluji, že element je viditelný a obsahuje text (alespoň jeden znak)
+
+Očekávaný výsledek:
+Element `//*[@id="polozky_seznam"]/div[2]/div[1]/p` je na stránce přítomen a viditelný.
+
+
+Post-conditions:
+- Suite Teardown: `Close Browser`
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC005 - 
+Ověření počtu boxů v menu na stránce pro seniory
+
+Pre-conditions:
+- Otevřen prohlížeč  
+- Nacházím se na URL: `https://www.dubnany.eu/seniori/`
+
+Testovací kroky:
+1. Načtu stránku `https://www.dubnany.eu/seniori/`  
+2. Spočítám počet elementů (boxů) v seznamu položek  
+   - Lokátor pro všechny boxy: `xpath=//*[@id="polozky_seznam"]/div`  
+   - Akce:  
+     ```robotframework
+     ${count}=    Get Element Count    xpath=//*[@id="polozky_seznam"]/div
+     ```  
+3. Ověřím, že počet boxů je 11  
+   - Akce:  
+     ```robotframework
+     Should Be Equal    ${count}    11
+     ```
+
+Očekávaný výsledek:
+- Na stránce existuje přesně 11 elementů odpovídajících boxům v `//*[@id="polozky_seznam"]/div`.
+
+Post-conditions:
+-Suite Teardown: `Close Browser`
+

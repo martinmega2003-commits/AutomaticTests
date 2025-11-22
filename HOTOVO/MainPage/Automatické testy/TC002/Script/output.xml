@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:19:51.717940" rpa="false" schemaversion="5">
+<suite id="s1" name="002" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC002\Script\002.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:19:52.227610" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:19:52.227132" elapsed="4.410481"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:19:56.637980" elapsed="0.143475"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:19:56.781884" elapsed="0.029278"/>
+</kw>
+<doc>Otevře hlavní stránku Dubňan v Chrome.</doc>
+<status status="PASS" start="2025-05-13T15:19:52.225932" elapsed="4.585436"/>
+</kw>
+<test id="s1-t1" name="TC001-003 Hover a klik na Platné vyhlášky a nařízení" line="9">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:19:56.813301" level="INFO">Simulating Mouse Over on element 'xpath=//nav//a[normalize-space(.)='Úřad']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Úřad']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:19:56.812884" elapsed="0.302391"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//nav//a[normalize-space(.)='Úřad']/following-sibling::ul//a[normalize-space(.)='Platné vyhlášky a nařízení']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:19:57.115789" elapsed="0.041871"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:19:57.158651" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Úřad']/following-sibling::ul//a[normalize-space(.)='Platné vyhlášky a nařízení']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Úřad']/following-sibling::ul//a[normalize-space(.)='Platné vyhlášky a nařízení']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:19:57.158299" elapsed="1.111663"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:19:58.278343" level="INFO">Current location is 'https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/'.</msg>
+<arg>https://www.dubnany.eu/urad/platne-vyhlasky-a-narizeni-1/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:19:58.270429" elapsed="0.008073"/>
+</kw>
+<doc>Najede myší na „Úřad“, zobrazí se podmenu a klikne na „Platné vyhlášky a nařízení“.</doc>
+<tag>menu</tag>
+<tag>navigation</tag>
+<status status="PASS" start="2025-05-13T15:19:56.811557" elapsed="1.467458"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:19:58.280273" elapsed="2.234905"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:19:51.720728" elapsed="8.794638"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">menu</stat>
+<stat pass="1" fail="0" skip="0">navigation</stat>
+</tag>
+<suite>
+<stat name="002" id="s1" pass="1" fail="0" skip="0">002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

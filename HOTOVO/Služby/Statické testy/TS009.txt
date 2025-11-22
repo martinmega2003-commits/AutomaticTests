@@ -1,0 +1,126 @@
+TS009 – Testování stránky „Služby“
+
+Pre-conditions:
+	- Nacházím se na stránce https://www.dubnany.eu/sluzby/ (Suite Setup „Open Browser And Prepare Page“ již otevřel a připravil stránku)
+	- Prohlížeč Chrome je otevřen a maximalizován
+	- Cookies banner byl odstraněn (Open Browser And Prepare Page)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC001 – Ověření názvu stránky  
+Testovací kroky:
+1. Ověřím, že se titul stránky shoduje s očekávaným  
+   - Akce: `Title Should Be    Služby - Oficiální stránky města Dubňany`
+
+Očekávaný výsledek:
+- Titulek stránky přesně odpovídá „Služby - Oficiální stránky města Dubňany“.
+
+Post-conditions:
+- Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 – Kontrola přítomnosti odkazu na „Služby“ v hlavním menu  
+Testovací kroky:
+1. Ověřím, že v navigaci existuje odkaz s textem „Služby“  
+   - Akce: `Page Should Contain Element    xpath=//nav//a[contains(text(),'Služby')]`
+
+Očekávaný výsledek:
+- Hlavní menu obsahuje odkaz „Služby“, který je viditelný a kliknutelný.
+
+Post-conditions:
+- Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC003 – Kontrola funkčnosti odkazu „Městská knihovna“  
+Testovací kroky:
+1. Kliknu na odkaz „Městská knihovna“ v mapě webu  
+   - Akce: `Click Link    xpath=//*[@id="mapa_webu"]/ul/li[2]/a`  
+2. Počkám, až URL obsahuje `/sluzby/mestska-knihovna/`  
+   - Akce: `Wait Until Location Contains    /sluzby/mestska-knihovna/`  
+3. Vrátím se zpět na stránku „Služby“  
+   - Akce: `Go Back`
+
+Očekávaný výsledek:
+- Po kliknutí se prohlížeč přesměruje na URL obsahující `/sluzby/mestska-knihovna/` a po `Go Back` zůstávám na původní stránce.
+
+Post-conditions:
+- Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 – Ověření sekce „Kontakt“  
+Testovací kroky:
+1. Sroluji do pohledu první odstavce sekce Kontakt  
+   - Akce: `Scroll Element into View     xpath=//*[@id="left"]/div/div[1]/div/p[1]`  
+2. Ověřím, že se zobrazí nadpis sekce Kontakt  
+   - Akce: `Page Should Contain Element    xpath=//*[@id="left"]/div/div[1]/h3/span`  
+3. Ověřím, že text sekce obsahuje e-mail  
+   - Akce: `Page Should Contain    sekretariat@dubnany.eu`
+
+Očekávaný výsledek:
+- Sekce „Kontakt“ je viditelná, obsahuje správný nadpis a uvádí e-mail sekretariat@dubnany.eu.
+
+Post-conditions:
+- Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC005 – Ověření titulku H1 stránky
+
+Testovací kroky:
+1. Počkám na zobrazení nadpisu stránky  
+   - `Wait Until Element Is Visible    css=header#header h1 a span    timeout=${TIMEOUT}`  
+2. Získám text nadpisu  
+   - `${text}=    Get Text    css=header#header h1 a span`  
+3. Ověřím, že text odpovídá očekávanému  
+   - `Should Be Equal    ${text}    Služby`
+
+
+Očekávaný výsledek:
+ Nadpis stránky uvádí přesně **Služby**.
+
+Post-conditions:
+- Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC006 – Ověření počtu položek v levém menu „Služby
+
+Testovací kroky:
+1. Počkám na zobrazení levého menu  
+   - `Wait Until Element Is Visible    css=aside#left nav ul.root li a    timeout=${TIMEOUT}`  
+2. Načtu všechny položky menu  
+   - `@{items}=    Get WebElements    css=aside#left nav ul.root li a`  
+3. Spočítám počet položek  
+   - `${count}=    Get Length    ${items}`  
+4. Ověřím, že jich je 17  
+   - `Should Be Equal As Integers    ${count}    17    msg=Počet položek v levém menu „Služby“ se neshoduje`
+
+Očekávaný výsledek:
+ 	V levém menu je přesně 17 odkazů na jednotlivé služby.
+
+Post-conditions:
+	Zůstávám na stránce „Služby“.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC007 – Ověření funkčnosti odkazu „Zdravotnictví
+
+Testovací kroky:
+	1. Počkám na zobrazení odkazu „Zdravotnictví“ v levém menu  
+   - `Wait Until Element Is Visible    xpath=//aside[@id="left"]//a[normalize-space(.)="Zdravotnictví"]    timeout=${TIMEOUT}`  
+2. Kliknu na tento odkaz  
+   - `Click Element    xpath=//aside[@id="left"]//a[normalize-space(.)="Zdravotnictví"]`  
+3. Počkám, až URL obsahuje `/sluzby/zdravotnictvi/`  
+   - `Wait Until Location Contains    /sluzby/zdravotnictvi/    timeout=${TIMEOUT}`  
+4. Vrátím se zpět na stránku „Služby“  
+   - `Go Back`
+
+Očekávaný výsledek:
+	Po kliknutí se prohlížeč přesměruje na stránku s URL obsahující `/sluzby/zdravotnictvi/`, a po návratu (`Go Back`) zůstávám na 	původní stránce „Služby“.
+
+Post-conditions:
+ Zůstávám na stránce „Služby“.
+
+	

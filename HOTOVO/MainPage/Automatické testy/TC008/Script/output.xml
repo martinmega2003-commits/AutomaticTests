@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:21:02.232470" rpa="false" schemaversion="5">
+<suite id="s1" name="008" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC008\Script\008.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:21:02.748138" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:21:02.747311" elapsed="4.301221"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.048964" elapsed="0.098568"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.147846" elapsed="0.017534"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-13T15:21:02.746164" elapsed="4.419424"/>
+</kw>
+<test id="s1-t1" name="TC000 odstranění cookies" line="12">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.166631" elapsed="0.044378"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:21:07.212023" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.211636" elapsed="0.150049"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:21:07.165744" elapsed="0.196465"/>
+</test>
+<test id="s1-t2" name="Odeslani ZpravY Pres Kontaktni Formular" line="15">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:21:07.364285" level="INFO">Simulating Mouse Over on element 'id=menucss29_cs'.</msg>
+<arg>id=menucss29_cs</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.363971" elapsed="0.302274"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:21:07.667138" level="INFO">Clicking element '//*[@id="menucss139_cs"]/a'.</msg>
+<msg time="2025-05-13T15:21:07.706617" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698DCC]
+	(No symbol) [0x00007FF74B6F09C4]
+	(No symbol) [0x00007FF74B6E2394]
+	(No symbol) [0x00007FF74B71737A]
+	(No symbol) [0x00007FF74B6E1C46]
+	(No symbol) [0x00007FF74B717590]
+	(No symbol) [0x00007FF74B73F39C]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</msg>
+<arg>//*[@id="menucss139_cs"]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-05-13T15:21:07.666813" elapsed="0.046222">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698DCC]
+	(No symbol) [0x00007FF74B6F09C4]
+	(No symbol) [0x00007FF74B6E2394]
+	(No symbol) [0x00007FF74B71737A]
+	(No symbol) [0x00007FF74B6E1C46]
+	(No symbol) [0x00007FF74B717590]
+	(No symbol) [0x00007FF74B73F39C]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=form[1]</arg>
+<arg>Jan</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.713594" elapsed="0.000069"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=form[2]</arg>
+<arg>Novák</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.714089" elapsed="0.000059"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=form[3]</arg>
+<arg>jan.novak@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.714473" elapsed="0.000052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=form[4]</arg>
+<arg>123 456 789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.714806" elapsed="0.000049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=form[5]</arg>
+<arg>Testovací zpráva</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.715123" elapsed="0.000047"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>name=odeslat</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.715488" elapsed="0.000054"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "status_error")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.715836" elapsed="0.000049"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "status_error")]</arg>
+<arg>Formulář není vyplněn správně. Prosím opravte tato políčka</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.716323" elapsed="0.000050"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "status_error")]</arg>
+<arg>Captcha</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-13T15:21:07.716643" elapsed="0.000047"/>
+</kw>
+<doc>Ověření funkce kontaktního formuláře města Dubňany s očekávanou chybou CAPTCHA</doc>
+<status status="FAIL" start="2025-05-13T15:21:07.363122" elapsed="0.353959">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74B8CCF25+75717]
+	GetHandleVerifier [0x00007FF74B8CCF80+75808]
+	(No symbol) [0x00007FF74B698DCC]
+	(No symbol) [0x00007FF74B6F09C4]
+	(No symbol) [0x00007FF74B6E2394]
+	(No symbol) [0x00007FF74B71737A]
+	(No symbol) [0x00007FF74B6E1C46]
+	(No symbol) [0x00007FF74B717590]
+	(No symbol) [0x00007FF74B73F39C]
+	(No symbol) [0x00007FF74B717153]
+	(No symbol) [0x00007FF74B6E0421]
+	(No symbol) [0x00007FF74B6E11B3]
+	GetHandleVerifier [0x00007FF74BBCD6FD+3223453]
+	GetHandleVerifier [0x00007FF74BBC7CA2+3200322]
+	GetHandleVerifier [0x00007FF74BBE5AD3+3322739]
+	GetHandleVerifier [0x00007FF74B8E69FA+180890]
+	GetHandleVerifier [0x00007FF74B8EE0FF+211359]
+	GetHandleVerifier [0x00007FF74B8D5274+109332]
+	GetHandleVerifier [0x00007FF74B8D5422+109762]
+	GetHandleVerifier [0x00007FF74B8BBA39+4825]
+	BaseThreadInitThunk [0x00007FF9DD21E8D7+23]
+	RtlUserThreadStart [0x00007FF9DE73C5DC+44]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:21:07.718440" elapsed="2.241736"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="FAIL" start="2025-05-13T15:21:02.235179" elapsed="7.725198"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="008" id="s1" pass="1" fail="1" skip="0">008</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

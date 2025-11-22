@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-11T21:46:10.876116" rpa="false" schemaversion="5">
+<suite id="s1" name="004" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\MartinMega\Automatické testy\TS004\script\004.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-11T21:46:11.399339" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/mesto/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-11T21:46:11.398912" elapsed="4.466572"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-11T21:46:15.865862" elapsed="0.079484"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-11T21:46:15.945673" elapsed="0.017802"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-11T21:46:11.397858" elapsed="4.565829"/>
+</kw>
+<test id="s1-t1" name="TC004 Ověření vrácení se na hlavní stránku pomocí loga" line="14">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-11T21:46:15.965391" level="INFO">Clicking element 'class=logo'.</msg>
+<arg>class=logo</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T21:46:15.964894" elapsed="2.387386"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-11T21:46:18.378391" level="INFO">Current page contains element '//*[@id="widget_5"]/div/p[1]'.</msg>
+<arg>//*[@id="widget_5"]/div/p[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-11T21:46:18.352908" elapsed="0.025721"/>
+</kw>
+<status status="PASS" start="2025-05-11T21:46:15.963844" elapsed="2.415387"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-11T21:46:18.380942" elapsed="2.245877"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-11T21:46:10.878797" elapsed="9.748172"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="004" id="s1" pass="1" fail="0" skip="0">004</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

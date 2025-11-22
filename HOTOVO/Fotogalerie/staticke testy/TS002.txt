@@ -1,0 +1,162 @@
+TS002- Testování Fotogalerie
+
+
+
+TC001
+
+Pre-conditions:
+- Webová stránka [https://www.dubnany.eu](https://www.dubnany.eu) je otevřená.
+- Používám prohlížeč Chrome.
+- Cookies lišta je zobrazena.
+
+Testovací kroky:
+1. Počkám na zobrazení tlačítka pro odmítnutí cookies  
+   `Wait Until Element Is Visible    id=cookies-consent-reject    timeout=${TIMEOUT}`
+
+2. Kliknu na tlačítko pro odmítnutí cookies  
+   `Click Element    id=cookies-consent-reject`
+
+3. Najedu myší na hlavní menu „Kultura“  
+   `Mouse Over    //*[@id="menucss79_cs"]/a`
+
+4. Kliknu na podmenu „Fotogalerie“  
+   `Click Element    //*[@id="menucss237_cs"]/a`
+
+5. Otevřu událost s fotogalerií (např. Zimní radovánky)  
+   `Click Element    //*[@id="event_1901"]/p[2]/a`
+
+6. Kliknu na náhled prvního obrázku  
+   `Click Element    //*[@id="gal_click_6677"]/img`
+
+7. Ověřím, že se obrázek zobrazil  
+   `Wait Until Element Is Visible    //*[@id="gal_click_6677"]/img`
+
+8. Zavřu obrázek stiskem klávesy ESC  
+   `Press Keys    NONE    \\27`
+
+9. Kliknu na další sekci galerie  
+   `Click Element    //*[@id="menu199_cs"]/a`
+
+10. Otevřu jinou událost  
+    `Click Element    //*[@id="event_1919"]/p[2]/a`
+
+11. Kliknu na jiný obrázek ve fotogalerii  
+    `Click Element    //*[@id="gal_click_6772"]`
+
+12. Ověřím, že se obrázek načetl  
+    `Wait Until Element Is Visible    //*[@id="gal_click_6772"]`
+
+13. Počkám 1 sekundu  
+    `Sleep    1s`
+
+14. Zavřu obrázek stiskem klávesy ESC  
+    `Press Keys    NONE    \\27`
+
+Očekávaný výsledek:
+- Fotogalerie se správně načte.
+- Obrázky se otevřou ve větším náhledu.
+- Náhled lze zavřít klávesou ESC.
+
+Post-conditions:
+- Prohlížeč se zavře (`Close Browser`).
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+TC002 – Ověření dostupnosti odkazů ve Fotogalerii
+
+Cíl testu:
+Ověřit, že všechny odkazy v hlavním menu sekce Fotogalerie vedou na platné stránky s neprázdným titulkem.
+
+
+Pre-conditions:
+- Nacházím se na stránce https://www.dubnany.eu/fotogalerie-1/
+- Prohlížeč Chrome je otevřen (Suite Setup „Open Browser To Fotogalerie“ proběhlo)
+- Test Setup „Go To Fotogalerie Page“ proběhlo
+
+
+Testovací kroky:
+1. Získám všechny odkazy v menu Fotogalerie
+   - Akce: `${links}=    Get Fotogalerie Links`
+2. Pro každý odkaz v `${links}`:
+   a. Loguji testovaný odkaz
+      - Akce: `Log    Testuji odkaz: ${link}`
+   b. Otevřu odkaz v novém okně
+      - Akce: `Execute Javascript    window.open("${link}", "_blank");`
+   c. Přepnu se na nové okno
+      - Akce: `Switch Window    NEW`
+   d. Počkám na načtení stránky
+      - Akce: `Wait Until Page Contains Element    //body    timeout=10s`
+   e. Zjistím titulku stránky
+      - Akce: `${title}=    Get Title`
+   f. Ověřím, že titul není prázdný
+      - Akce: `Should Not Be Empty    ${title}`
+   g. Zavřu aktuální (nové) okno
+      - Akce: `Close Window`
+   h. Přepnu se zpět do původního okna
+      - Akce: `Switch Window    index=0`
+
+
+Očekávaný výsledek:
+- Každý odkaz se otevře bez chyby a načte se stránka s neprázdným title.
+
+Post-conditions:
+- Browser session ukončena (Suite Teardown „Close Browser“)
+- Žádné změny na stránce nezůstanou (návrat do výchozího stavu)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC003 – Ověření titulku stránky Fotogalerie
+
+Cíl testu:
+Ověřit, že se titul stránky Fotogalerie shoduje s očekávaným.
+
+Pre-conditions:
+- Nacházím se na stránce https://www.dubnany.eu/fotogalerie-1/
+- Prohlížeč Chrome je otevřen (Suite Setup „Open Browser To Fotogalerie“ proběhlo)
+- Test Setup „Go To Fotogalerie Page“ proběhlo
+
+Testovací kroky:
+1. Zjistím aktuální titul stránky
+   - Akce: `${title}=    Get Title`
+2. Ověřím, že titul odpovídá „Fotogalerie - Oficiální stránky města Dubňany“
+   - Akce: `Should Be Equal    ${title}    Fotogalerie - Oficiální stránky města Dubňany`
+
+Očekávaný výsledek:
+- Titul stránky je přesně „Fotogalerie - Oficiální stránky města Dubňany“.
+
+Post-conditions:
+- Browser session ukončena (Suite Teardown „Close Browser“)
+- Žádné změny na stránce nezůstanou
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 – Ověření počtu odkazů na roky ve Fotogalerii
+
+Cíl testu:
+Ověřit, že v levém menu sekce Fotogalerie je přítomno alespoň 5 odkazů na jednotlivé roky.
+
+Pre-conditions:
+- Nacházím se na stránce https://www.dubnany.eu/fotogalerie-1/
+- Prohlížeč Chrome je otevřen (Suite Setup „Open Browser To Fotogalerie“ proběhlo)
+- Test Setup „Go To Fotogalerie Page“ proběhlo
+
+Testovací kroky:
+1. Získám všechny odkazy v menu Fotogalerie
+   - Akce: `@{links}=    Get Fotogalerie Links`
+2. Spočítám jejich počet
+   - Akce: `${count}=    Get Length    ${links}`
+3. Ověřím, že je počet odkazů větší nebo roven 5
+   - Akce: `Should Be True    ${count} >= 5    msg=Očekávalo se alespoň 5 odkazů, našlo se ${count}.`
+
+Očekávaný výsledek:
+- Na stránce je minimálně 5 odkazů na jednotlivé roky ve Fotogalerii.
+
+Post-conditions:
+- Browser session ukončena (Suite Teardown „Close Browser“)
+- Žádné změny na stránce nezůstanou

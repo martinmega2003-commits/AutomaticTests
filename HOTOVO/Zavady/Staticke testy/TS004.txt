@@ -1,0 +1,160 @@
+TS004 –  závady
+
+
+TC001 – Ověření závad
+
+Cíl testu:
+Ověřit funkčnost systému pro nahlášení závad ve městě Dubňany.
+
+Předpoklady:
+- Test běží na adrese [https://www.dubnany.eu](https://www.dubnany.eu)
+- Ověřujeme formulář pro nahlášení závady
+- Cookies lišta je přítomna a musí být odmítnuta
+
+Testovací kroky:
+1. Počkám na zobrazení cookies banneru  
+   `Wait Until Element Is Visible    id=cookies-consent-reject    timeout=${TIMEOUT}`
+
+2. Odsunu cookies banner do zorného pole  
+   `Scroll Element into View    id=cookies-consent-reject`
+
+3. Kliknu na „Odmítnout cookies“  
+   `Click Element    id=cookies-consent-reject`
+
+4. Najdu a kliknu na obrázek/link „Závady“ v levém menu  
+   - `Wait Until Element Is Visible    xpath=//*[@id="left"]/div/div[5]/div/p/a/img    timeout=${TIMEOUT}`  
+   - `Scroll Element into View    xpath=//*[@id="left"]/div/div[5]/div/p/a/img`  
+   - `Click Element    xpath=//*[@id="left"]/div/div[5]/div/p/a`
+
+5. Počkám na tlačítko „Přidat hlášení“  
+   `Wait Until Element Is Visible    xpath=//button[.//span[text()="Přidat hlášení"]]    timeout=${TIMEOUT}`
+
+6. Posunu se k tlačítku a kliknu  
+   - `Scroll Element into View    xpath=//button[.//span[text()="Přidat hlášení"]]`  
+   - `Sleep    ${PAUSE}`  
+   - `Click Element    xpath=//button[.//span[text()="Přidat hlášení"]]`
+
+7. Počkám, dokud se nezobrazí nadpis „Nové hlášení“  
+   `Wait Until Page Contains Element    xpath=//h2[text()="Nové hlášení"]    timeout=${TIMEOUT}`
+
+8. Posunu se na textové pole pro popis  
+   `Scroll Element into View    xpath=//textarea[@class="input input-textarea newInput--input"]`
+
+9. Kliknu na „Vybrat kategorii“  
+   `Click Element    xpath=.../div[2]/button`
+
+10. Vyberu první možnost z rozbalovacího seznamu  
+    `Select From List By Value    xpath=//select[@class="input input-select newInput--input"]    1`
+
+11. Vyplním popis hlášení  
+    `Input Text    ...textarea[2]    V testu přidáno přes Robot Framework`
+
+12. Vyplním e-mail  
+    `Input Text    xpath=//input[@type="email"]    test@example.com`
+
+13. Zaškrtnu souhlas  
+    `Click Element    xpath=.../form/label[5]/span[1]/span`
+
+14. Krátké čekání (simulace uživatelského chování)  
+    `Sleep    ${PAUSE}`  
+    `Sleep    5s`
+
+15. Kliknu na „Odeslat hlášení“  
+    `Click Element    xpath=.../form/div[2]/button[2]`
+
+
+Očekávaný výsledek:
+- Závada je úspěšně odeslána (případně validována)
+- Formulář je funkční a reaguje na vstupy
+
+
+Post-conditions:
+- Hlášení bylo odesláno nebo validováno
+- Stránka zůstává otevřená pro další interakci
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+TC002 - Ověření funkčnosti přiblížení a oddálení mapy
+
+Pre-conditions:
+- Otevřen prohlížeč  
+- Navigováno na URL: `https://hlaseni.tmapy.cz/#586161`  
+- Mapová aplikace je plně načtena
+
+
+testovací kroky:
+1. Zjistím aktuální úroveň přiblížení (zoom) mapy  
+   ```robotframework
+   ${zoom0}=    Execute JavaScript    return window.map.getView().getZoom();
+2.Kliknu na tlačítko + pro přiblížení
+
+Lokátor: css=.leaflet-control-zoom-in
+3.Ověřím, že se úroveň přiblížení zvýšila o 1
+4.Kliknu na tlačítko – pro oddálení
+
+Lokátor: css=.leaflet-control-zoom-out
+5.Ověřím, že se úroveň přiblížení vrátila na původní hodnotu
+
+Očekávaný výsledek:
+	Kliknutím na + se mapa přiblíží o jednu úroveň zoomu.
+	Kliknutím na – se mapa oddálí zpět na původní úroveň.
+
+Post-conditions:
+	Zavře se browser
+
+TC003-  Ověření přepnutí do leteckého režimu
+	
+Pre-conditions:
+	Otevřen prohlížeč
+	Navigováno na URL: https://hlaseni.tmapy.cz/#586161
+	Mapová aplikace je plně načtena
+
+Testovací kroky:
+
+1.Ověřím, že existuje ovladač pro přepnutí do leteckého režimu
+2.Kliknu na tlačítko Letecký snímek
+3.Ověřím, že se dlaždice mapy změnily na satelitní zdroj
+4.(Volitelně) Kliknu znovu na Letecký snímek pro návrat do standardního režimu
+5.Ověřím, že se dlaždice vrátily na standardní zdroj
+
+Očekávaný výsledek:
+	Po kliknutí na ovladač se mapa přepne do leteckého (satelitního) režimu.
+	Po opětovném kliknutí se vrátí zpět na standardní režim.
+
+Post-conditions:
+	Suite Teardown: Close Browser
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 -  Ověření funkčnosti tlačítka „Sledovat moji polohu“
+
+Pre-conditions:
+	Otevřen prohlížeč  
+	Navigováno na URL: `https://hlaseni.tmapy.cz/#586161`  
+	Mapová aplikace je plně načtena  
+ 	Prohlížeči povoleno sdílení polohy
+
+Testovací kroky:
+1. Zjistím počáteční střed mapy 
+2.Ověřím přítomnost tlačítka „Sledovat moji polohu“
+3.Kliknu na toto tlačítko
+4.Počkám, až se tlačítko aktivuje (změní CSS třídu)
+5. Povolím sdílení polohy
+6.Ověřím, že se střed mapy změnil
+
+Očekávaný výsledek:
+	Po kliknutí na tlačítko „Sledovat moji polohu“ se aktivuje režim sledování (tlačítko získá třídu active).
+	Střed mapy se posune na uživatelovu polohu (souřadnice středu se změní).
+
+Post-conditions:
+
+Suite Teardown: Close Browser
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:17:19.383549" rpa="false" schemaversion="5">
+<suite id="s1" name="009" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Fotogalerie\Automaticke testy\TC009\Script\009.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:19.906284" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:17:19.905810" elapsed="4.338751"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.245106" elapsed="0.164670"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.410098" elapsed="0.026227"/>
+</kw>
+<doc>Otevře fologalerii a vyzkousi obrazky</doc>
+<status status="PASS" start="2025-05-13T15:17:19.904704" elapsed="4.531827"/>
+</kw>
+<test id="s1-t1" name="TS009 - overeni fotogalerie" line="11">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.437531" elapsed="0.043979"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:24.482376" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.482036" elapsed="0.101466"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:24.584349" level="INFO">Simulating Mouse Over on element '//*[@id="menucss79_cs"]/a'.</msg>
+<arg>//*[@id="menucss79_cs"]/a</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.584018" elapsed="0.312176"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:24.897084" level="INFO">Clicking element '//*[@id="menucss237_cs"]/a'.</msg>
+<arg>//*[@id="menucss237_cs"]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:24.896712" elapsed="0.936987"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:25.834482" level="INFO">Clicking element '//*[@id="event_1901"]/p[2]/a'.</msg>
+<arg>//*[@id="event_1901"]/p[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:25.834176" elapsed="9.387927"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:35.223068" level="INFO">Clicking element '//*[@id="gal_click_6677"]/img'.</msg>
+<arg>//*[@id="gal_click_6677"]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:35.222611" elapsed="0.092880"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="gal_click_6677"]/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:17:35.315980" elapsed="0.025461"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:35.342545" level="INFO">Sending key(s) ('\\27',) to page.</msg>
+<msg time="2025-05-13T15:17:35.342699" level="INFO">Sending keys \27</msg>
+<arg>NONE</arg>
+<arg>\\27</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:35.341945" elapsed="0.012491"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:35.355171" level="INFO">Clicking element '//*[@id="menu199_cs"]/a'.</msg>
+<arg>//*[@id="menu199_cs"]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:35.354876" elapsed="2.333185"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:37.689031" level="INFO">Clicking element '//*[@id="event_1919"]/p[2]/a'.</msg>
+<arg>//*[@id="event_1919"]/p[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:37.688719" elapsed="3.176850"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:40.866372" level="INFO">Clicking element '//*[@id="gal_click_6772"]'.</msg>
+<arg>//*[@id="gal_click_6772"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:17:40.866049" elapsed="0.089394"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="gal_click_6772"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:17:40.955926" elapsed="0.021189"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T15:17:41.978685" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T15:17:40.977583" elapsed="1.001361"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:17:41.980583" level="INFO">Sending key(s) ('\\27',) to page.</msg>
+<msg time="2025-05-13T15:17:41.980713" level="INFO">Sending keys \27</msg>
+<arg>NONE</arg>
+<arg>\\27</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:41.979868" elapsed="0.016354"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:17:24.436684" elapsed="17.560027"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:17:41.997968" elapsed="2.268583"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-13T15:17:19.386660" elapsed="24.880088"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="009" id="s1" pass="1" fail="0" skip="0">009</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

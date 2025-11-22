@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:20:01.273246" rpa="false" schemaversion="5">
+<suite id="s1" name="003" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC003\Script\003.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:01.786163" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:20:01.785690" elapsed="4.427020"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.213098" elapsed="0.130317"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.343842" elapsed="0.028999"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-13T15:20:01.784585" elapsed="4.588481"/>
+</kw>
+<test id="s1-t1" name="TC000 odstranění cookies" line="11">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.374145" elapsed="0.037999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:06.413502" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.412891" elapsed="0.124265"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:20:06.373229" elapsed="0.164408"/>
+</test>
+<test id="s1-t2" name="TC002-001 - Ověření funkčnosti vyhledávacího tlačítka" line="14">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:06.539442" level="INFO">Simulating Mouse Over on element 'id=hledej'.</msg>
+<arg>id=hledej</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.539125" elapsed="0.332919"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:06.872879" level="INFO">Clicking element 'id=hledej'.</msg>
+<arg>id=hledej</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.872564" elapsed="0.096445"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:06.969857" level="INFO">Typing text 'Územní studie' into text field 'id=hledej'.</msg>
+<arg>id=hledej</arg>
+<arg>Územní studie</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:06.969528" elapsed="0.118107"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:07.088741" level="INFO">Sending key(s) ('ENTER',) to id=hledej element.</msg>
+<msg time="2025-05-13T15:20:07.383928" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-05-13T15:20:07.384067" level="INFO">Releasing special key ENTER.</msg>
+<arg>id=hledej</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-13T15:20:07.088147" elapsed="0.318033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:07.407114" level="INFO">Clicking element '//*[@id="ft_casovy"]/tbody/tr[3]/td[2]/a'.</msg>
+<arg>//*[@id="ft_casovy"]/tbody/tr[3]/td[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:07.406771" elapsed="2.328889"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Územní studie</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:09.736175" elapsed="0.022872"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:09.775971" level="INFO">Current page contains element '//*[@id="editor_content"]/p[2]/a'.</msg>
+<arg>//*[@id="editor_content"]/p[2]/a</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:09.759532" elapsed="0.016601"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:20:06.538370" elapsed="3.238234"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:20:09.777848" elapsed="2.298987"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-13T15:20:01.276012" elapsed="10.801080"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="003" id="s1" pass="2" fail="0" skip="0">003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,135 @@
+
+TS008 – Testování levého menu „Úřad“
+
+Pre-conditions:
+	- Nacházím se na stránce https://www.dubnany.eu/urad/ (Suite Setup „Open Main Page“ otevřel stránku Úřad města Dubňany)
+	- Prohlížeč Chrome je otevřen a maximalizován
+	- Selenium timeout je nastaven na ${TIMEOUT}=10s
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC000 – Odstranění cookies  
+Testovací kroky:
+1. Počkám na zobrazení tlačítka pro odmítnutí cookies  
+   - Akce: `Wait Until Element Is Visible    id=cookies-consent-reject    timeout=${TIMEOUT}`  
+2. Kliknu na tlačítko pro odmítnutí cookies  
+   - Akce: `Click Element    id=cookies-consent-reject`  
+3. Počkám ${TIMEOUT} na stabilizaci stavu stránky  
+   - Akce: `Sleep    ${TIMEOUT}`  
+
+Očekávaný výsledek:
+- Cookies banner zmizí a soubory cookies jsou odmítnuty.
+
+Post-conditions:
+- Zůstávám na stránce Úřad.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC001 – Ověření textů v levém menu „Úřad“  
+Testovací kroky:
+1. Počkám na zobrazení položek levého menu  
+   - Akce: `Wait Until Element Is Visible    css=aside#left nav ul li a    timeout=${TIMEOUT}`  
+2. Načtu všechny položky menu  
+   - Akce: `@{elements}=    Get WebElements    css=aside#left nav ul li a`  
+3. Ověřím, že počet položek je 16  
+   - Akce: `Should Be Equal As Integers    ${len(${elements})}    16    msg=Počet položek v menu neodpovídá očekávanému`  
+4. Pro každou položku ověřím text podle očekávaného seznamu  
+   FOR    ${idx}    IN RANGE    16  
+   &emsp;${el}=    Set Variable    ${elements}[${idx}]  
+   &emsp;${text}=    Get Text    ${el}  
+   &emsp;${exp}=    Set Variable    ${expected_items}[${idx}]    # seznam 16 očekávaných textů  
+   &emsp;Should Be Equal    ${text}    ${exp}    msg=Text na pozici ${idx} se neshoduje  
+   END  
+
+Očekávaný výsledek:
+- Všechny položky levého menu se zobrazují ve správném pořadí a s očekávanými texty.
+
+Post-conditions:
+- Zůstávám na stránce Úřad.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 – Ověření textů a odkazů v levém menu „Úřad“  
+Testovací kroky:
+1. Počkám na zobrazení položek levého menu  
+   - Akce: `Wait Until Element Is Visible    css=aside#left nav ul li a    timeout=${TIMEOUT}`  
+2. Načtu všechny položky menu  
+   - Akce: `@{elements}=    Get WebElements    css=aside#left nav ul li a`  
+3. Ověřím, že počet položek je 16  
+   - Akce: `Should Be Equal As Integers    ${len(${elements})}    16    msg=Počet položek v menu neodpovídá očekávanému`  
+4. Pro každou položku ověřím text i href podle očekávaných seznamů  
+   FOR    ${idx}    IN RANGE    16  
+   &emsp;${el}=         Set Variable    ${elements}[${idx}]  
+   &emsp;${text}=       Get Text                      ${el}  
+   &emsp;${href}=       Get Element Attribute        ${el}    href  
+   &emsp;${exp_text}=   Set Variable                 ${expected_items}[${idx}]    # 16 očekávaných textů  
+   &emsp;${exp_href}=   Set Variable                 ${expected_links}[${idx}]    # 16 očekávaných URL  
+   &emsp;Should Be Equal    ${text}    ${exp_text}    msg=Text na pozici ${idx} se neshoduje  
+   &emsp;Should Be Equal    ${href}    ${exp_href}    msg=Href na pozici ${idx} se neshoduje  
+   END  
+
+Očekávaný výsledek:
+- Každá položka levého menu má správný text i správný odkaz (href) podle definovaného seznamu.
+
+Post-conditions:	
+- Zůstávám na stránce Úřad.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+TC003 – Přesměrování na „Úřední deska
+	
+
+Testovací kroky:
+
+1. Počkám na zobrazení položky „Úřední deska“ v levém menu  
+   - `Wait Until Element Is Visible    css=aside#left nav ul li a[href$="/urad/uredni-deska/"]    timeout=${TIMEOUT}`
+2. Kliknu na položku „Úřední deska“  
+   - `Click Element    css=aside#left nav ul li a[href$="/urad/uredni-deska/"]`
+3. Počkám na změnu URL  
+   - `Wait Until Location Contains    /urad/uredni-deska/    timeout=${TIMEOUT}`
+
+Očekávaný výsledek:
+- Prohlížeč se přesměruje na stránku s URL obsahující `/urad/uredni-deska/`.
+
+Post-conditions:
+	Zůstávám na stránce Úřední deska.
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 – Ověření počtu odkazů v levém menu
+	
+Testovací kroky:
+1. Počkám na zobrazení všech odkazů v levém menu  
+   - `Wait Until Element Is Visible    css=aside#left nav ul li a    timeout=${TIMEOUT}`
+2. Načtu všechny odkazy  
+   - `@{links}=    Get WebElements    css=aside#left nav ul li a`
+3. Spočítám počet odkazů  
+   - ` ${count}=    Get Length    ${links}`
+4. Ověřím, že počet odpovídá očekávanému (16)  
+   - `Should Be Equal As Integers    ${count}    16    msg=Počet odkazů v levém menu neodpovídá očekávanému`
+Očekávaný výsledek:
+-V levém menu je přesně 16 odkazů.
+
+Post-conditions:
+- Zůstávám na stránce Úřad.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC005 – Ověření přítomnosti textu „Městský úřad“ v hlavní sekci
+
+Testovací kroky:
+1. Počkám na zobrazení hlavní sekce obsahu  
+   - `Wait Until Element Is Visible    css=div#content    timeout=${TIMEOUT}`
+2. Ověřím, že v hlavní sekci je text „Městský úřad“  
+   - `Page Should Contain Element    xpath=//div[@id="content"]//*[contains(normalize-space(.),"Městský úřad")]`
+
+Očekávaný výsledek:
+- V hlavní sekci stránky (element s `id="content"`) je viditelný text **Městský úřad**.
+
+Post-conditions:
+- Zůstávám na stránce Úřad.
+
+
+
+
+
+
+

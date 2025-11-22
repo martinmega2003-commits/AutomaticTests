@@ -1,0 +1,99 @@
+TS006 - Kalendář
+
+
+Pre-conditions:
+	- Nacházím se na stránce https://www.dubnany.eu/
+	- Využívám prohlížeč Chrome (libovolná podporovaná verze)
+	- Suite Setup „Open Main Page“ již otevřel hlavní stránku
+	- Cookies banner se může zobrazit (TS001-TC004 odstranění cookies)
+
+
+TC001 - Přechod na další měsíc v kalendáři
+Testovací kroky:
+1. Čekám, až bude viditelný kalendář  
+   - Akce: `Wait Until Element Is Visible    css=.kalendar-6    timeout=10s`  
+2. Kliknu na tlačítko „další“ podle alt atributu  
+   - Akce: `Click Element    xpath=//form[@id='kalform']//input[@alt='další']`  
+3. Počkám 1 s na AJAX reload  
+   - Akce: `Sleep    1s`  
+4. Načtu novou hodnotu měsíce z `<select id="month">`  
+   - Akce: ` ${next_month}=    Execute JavaScript    return document.querySelector('#month').value;`  
+5. Načtu aktuální měsíc z prohlížeče  
+   - Akce: ` ${current_month}=    Execute JavaScript    return new Date().getMonth()+1;`  
+6. Ověřím, že se hodnoty liší  
+   - Akce: `Should Not Be Equal    ${next_month}    ${current_month}`  
+
+Očekávaný výsledek:
+- Po kliknutí na „další“ se hodnota měsíce v seznamu změní na jiné číslo než aktuální.
+
+Post-conditions:
+- Kalendář je zobrazen v následujícím měsíci.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 – Návrat na předchozí měsíc v kalendáři  
+Testovací kroky:
+1. Naviguji na hlavní stránku  
+   - Akce: `Go To    https://www.dubnany.eu/`  
+2. Čekám na zobrazení kalendáře  
+   - Akce: `Wait Until Element Is Visible    css=.kalendar-6    timeout=10s`  
+3. Načtu aktuální hodnotu měsíce  
+   - Akce: ` ${current_month}=    Execute JavaScript    return document.querySelector('#month').value;`  
+4. Provedu kliknutí na „předchozí“ přes JavaScript  
+   - Akce: `Execute JavaScript    document.querySelector("form#kalform input[alt*='ředchozí']").click();`  
+5. Počkám 1 s na AJAX reload  
+   - Akce: `Sleep    1s`  
+6. Načtu novou hodnotu měsíce  
+   - Akce: ` ${prev_month}=    Execute JavaScript    return document.querySelector('#month').value;`  
+7. Ověřím, že se hodnoty liší  
+   - Akce: `Should Not Be Equal As Integers    ${prev_month}    ${current_month}`  
+
+Očekávaný výsledek:
+- Po kliknutí na „předchozí“ se hodnota měsíce v seznamu vrátí o jeden měsíc zpět.
+
+Post-conditions:
+- Kalendář je zobrazen v předchozím měsíci.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC003 – Změna roku v kalendáři  
+Testovací kroky:
+1. Čekám na zobrazení kalendáře  
+   - Akce: `Wait Until Element Is Visible    css=.kalendar-6    timeout=10s`  
+2. Vyberu rok 2024 ze seznamu  
+   - Akce: `Select From List By Value    css=#year    2024`  
+3. Počkám 1 s na AJAX reload  
+   - Akce: `Sleep    1s`  
+4. Načtu vybranou hodnotu roku  
+   - Akce: ` ${selected_year}=    Get Selected List Value    css=#year`  
+5. Ověřím, že je vybrán rok 2024  
+   - Akce: `Should Be Equal    ${selected_year}    2024`  
+
+Očekávaný výsledek:
+- Ve výběru roku je nastavena hodnota `2024`.
+
+Post-conditions:
+- Kalendář zobrazuje události pro rok 2024.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 – Počet dní v měsíci (únor 2025)  
+Testovací kroky:
+1. Pokusím se zavřít cookies banner, pokud je stále zobrazen  
+   - Akce: `Run Keyword And Ignore Error    Click Element    css=#cookie_consent button.accept`  
+2. Vyberu měsíc únor  
+   - Akce: `Select From List By Value    css=#month    2`  
+3. Vyberu rok 2025  
+   - Akce: `Select From List By Value    css=#year    2025`  
+4. Počkám 1 s na AJAX redraw  
+   - Akce: `Sleep    1s`  
+5. Spočítám buňky s třídou `mesic` (dny aktuálního měsíce)  
+   - Akce: ` ${day_cells}=    Get Element Count    xpath=//div[@id='kal_table']//td[contains(@class,'mesic')]`  
+6. Ověřím, že jich je 28  
+   - Akce: `Should Be Equal As Integers    ${day_cells}    28`  
+
+Očekávaný výsledek:
+- Kalendář pro únor 2025 zobrazuje přesně 28 dní.
+
+Post-conditions:
+- Kalendář zobrazuje správný počet dní pro vybraný měsíc a rok.

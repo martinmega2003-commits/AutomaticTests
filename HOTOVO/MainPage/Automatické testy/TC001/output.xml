@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-11T20:58:40.716764" rpa="false" schemaversion="5">
+<suite id="s1" name="002" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\MartinMega\Automatické testy\TS001\002.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:41.244139" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:41.243664" elapsed="4.176792"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-11T20:58:45.421002" elapsed="0.127101"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-11T20:58:45.548415" elapsed="0.027464"/>
+</kw>
+<doc>Otevře hlavní stránku Dubňan v Chrome.</doc>
+<status status="PASS" start="2025-05-11T20:58:41.242616" elapsed="4.333466"/>
+</kw>
+<test id="s1-t1" name="TC001-002 Ověření funkčnosti odkazů v horním menu" line="11">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:45.577597" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Úřad']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Úřad']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:45.577252" elapsed="1.081083"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:46.666252" level="INFO">Current location is 'https://www.dubnany.eu/urad/'.</msg>
+<arg>https://www.dubnany.eu/urad/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:46.658840" elapsed="0.007579"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:46.667034" elapsed="0.337860"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:47.005718" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Město']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Město']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:47.005363" elapsed="1.177885"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:48.191407" level="INFO">Current location is 'https://www.dubnany.eu/mesto/'.</msg>
+<arg>https://www.dubnany.eu/mesto/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:48.183871" elapsed="0.007697"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:48.192033" elapsed="0.371842"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:48.564955" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Služby']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Služby']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:48.564445" elapsed="1.135184"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:49.707555" level="INFO">Current location is 'https://www.dubnany.eu/sluzby/'.</msg>
+<arg>https://www.dubnany.eu/sluzby/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:49.700255" elapsed="0.007462"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:49.708199" elapsed="0.440906"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:50.150426" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Kultura']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Kultura']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:50.149905" elapsed="1.016078"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:51.176180" level="INFO">Current location is 'https://www.dubnany.eu/kultura/'.</msg>
+<arg>https://www.dubnany.eu/kultura/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:51.166512" elapsed="0.009827"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:51.176783" elapsed="0.429962"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:51.607754" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Fotogalerie']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Fotogalerie']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:51.607304" elapsed="1.003939"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:52.620214" level="INFO">Current location is 'https://www.dubnany.eu/fotogalerie-1/'.</msg>
+<arg>https://www.dubnany.eu/fotogalerie-1/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:52.611734" elapsed="0.008691"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:52.621004" elapsed="0.363012"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:52.985158" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Kontakt']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Kontakt']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:52.984648" elapsed="1.173248"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:54.164499" level="INFO">Current location is 'https://www.dubnany.eu/kontakt/'.</msg>
+<arg>https://www.dubnany.eu/kontakt/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:54.158462" elapsed="0.006209"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:54.165284" elapsed="0.428091"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:54.594307" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Volby 2024']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Volby 2024']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:54.593865" elapsed="1.058748"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:55.665965" level="INFO">Current location is 'https://www.dubnany.eu/volby-2024/'.</msg>
+<arg>https://www.dubnany.eu/volby-2024/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:55.653221" elapsed="0.012899"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:55.666553" elapsed="0.368043"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:56.035517" level="INFO">Clicking link 'xpath=//nav//a[normalize-space(.)='Projekty']'.</msg>
+<arg>xpath=//nav//a[normalize-space(.)='Projekty']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T20:58:56.035082" elapsed="1.046121"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-11T20:58:57.095605" level="INFO">Current location is 'https://www.dubnany.eu/projekty/'.</msg>
+<arg>https://www.dubnany.eu/projekty/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-11T20:58:57.082053" elapsed="0.013768"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:57.096406" elapsed="0.407049"/>
+</kw>
+<doc>Každá položka horního menu přesměruje na odpovídající sekci.</doc>
+<tag>menu</tag>
+<tag>navigation</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-11T20:58:45.576249" elapsed="11.927801"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-11T20:58:57.505577" elapsed="2.362185"/>
+</kw>
+<status status="PASS" start="2025-05-11T20:58:40.719769" elapsed="19.148191"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">menu</stat>
+<stat pass="1" fail="0" skip="0">navigation</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="002" id="s1" pass="1" fail="0" skip="0">002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

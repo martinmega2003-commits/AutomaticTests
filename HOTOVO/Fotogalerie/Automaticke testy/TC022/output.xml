@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T12:54:24.220384" rpa="false" schemaversion="5">
+<suite id="s1" name="022" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Fotogalerie\Automaticke testy\TC022\Scipt\022.robot">
+<kw name="Open Browser To Fotogalerie" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:24.759436" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/fotogalerie-1/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T12:54:24.758924" elapsed="3.109052"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T12:54:27.868362" elapsed="0.039090"/>
+</kw>
+<status status="PASS" start="2025-05-13T12:54:24.757686" elapsed="3.150086"/>
+</kw>
+<test id="s1-t1" name="Test Page Title Is Correct" line="50">
+<kw name="Go To Fotogalerie Page" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:27.909799" level="INFO">Opening url 'https://www.dubnany.eu/fotogalerie-1/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T12:54:27.909543" elapsed="0.817847"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:nav#menu ul.root li a</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T12:54:28.727692" elapsed="0.017790"/>
+</kw>
+<status status="PASS" start="2025-05-13T12:54:27.909066" elapsed="0.836639"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:28.753280" level="INFO">${title} = Fotogalerie - Oficiální stránky města Dubňany</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-13T12:54:28.746172" elapsed="0.007193"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Fotogalerie - Oficiální stránky města Dubňany</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T12:54:28.753822" elapsed="0.000363"/>
+</kw>
+<doc>Ověří, že se titul stránky shoduje s očekáváním.</doc>
+<status status="PASS" start="2025-05-13T12:54:27.908024" elapsed="0.846501"/>
+</test>
+<test id="s1-t2" name="Test At Least Five Year Links Present" line="55">
+<kw name="Go To Fotogalerie Page" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:28.757163" level="INFO">Opening url 'https://www.dubnany.eu/fotogalerie-1/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T12:54:28.756877" elapsed="0.834027"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:nav#menu ul.root li a</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.591284" elapsed="0.011071"/>
+</kw>
+<status status="PASS" start="2025-05-13T12:54:28.756391" elapsed="0.846198"/>
+</kw>
+<kw name="Get Fotogalerie Links">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.614229" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.137")&gt;, &lt;selenium.webdri...</msg>
+<var>${elements}</var>
+<arg>css:nav#menu ul.root li a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.603691" elapsed="0.010624"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-13T12:54:29.614872" level="INFO">@{links} = [ ]</msg>
+<var>@{links}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.614606" elapsed="0.000314"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.626973" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2025/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.615550" elapsed="0.011503"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.627320" elapsed="0.000299"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.137")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.615362" elapsed="0.012340"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.636943" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2024/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.628145" elapsed="0.008868"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.637240" elapsed="0.000265"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.138")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.627963" elapsed="0.009621"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.646164" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2023/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.637920" elapsed="0.008322"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.646500" elapsed="0.000293"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.139")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.637781" elapsed="0.009092"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.654457" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2022/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.647205" elapsed="0.007317"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.654729" elapsed="0.000317"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.140")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.647062" elapsed="0.008126"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.663167" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2021/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.655605" elapsed="0.007995"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.663962" elapsed="0.000286"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.141")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.655443" elapsed="0.008904"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.671943" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2020/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.664696" elapsed="0.007361"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.672394" elapsed="0.000442"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.142")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.664548" elapsed="0.008436"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.682453" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2019/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.673606" elapsed="0.008960"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.682843" elapsed="0.000282"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.143")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.673315" elapsed="0.009889"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.691505" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2018/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.683569" elapsed="0.008012"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.691830" elapsed="0.000303"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.144")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.683400" elapsed="0.008817"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.699911" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2017/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.692568" elapsed="0.007406"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.700180" elapsed="0.000251"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.145")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.692421" elapsed="0.008089"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.708226" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2016/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.700833" elapsed="0.007467"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.708538" elapsed="0.000342"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.146")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.700693" elapsed="0.008279"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T12:54:29.716730" level="INFO">${href} = https://www.dubnany.eu/fotogalerie-1/rok-2013/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.709330" elapsed="0.007469"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.717025" elapsed="0.000258"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="26df36d2b2fe05365eb0da63db5fe9dd", element="f.FD9C80484CDC51596F85A7CB16CECCBE.d.F1277D3940C4CFC64F4725471BF50172.e.147")&gt;</var>
+<status status="PASS" start="2025-05-13T12:54:29.709182" elapsed="0.008181"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-05-13T12:54:29.615045" elapsed="0.102401"/>
+</for>
+<return>
+<value>${links}</value>
+<status status="PASS" start="2025-05-13T12:54:29.717579" elapsed="0.000097"/>
+</return>
+<msg time="2025-05-13T12:54:29.717921" level="INFO">@{links} = [ https://www.dubnany.eu/fotogalerie-1/rok-2025/ | https://www.dubnany.eu/fotogalerie-1/rok-2024/ | https://www.dubnany.eu/fotogalerie-1/rok-2023/ | https://www.dubnany.eu/fotogalerie-1/rok-2022/ | ht...</msg>
+<var>@{links}</var>
+<status status="PASS" start="2025-05-13T12:54:29.603205" elapsed="0.114789"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-05-13T12:54:29.718588" level="INFO">Length is 11.</msg>
+<msg time="2025-05-13T12:54:29.718709" level="INFO">${count} = 11</msg>
+<var>${count}</var>
+<arg>${links}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.718348" elapsed="0.000424"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt;= 5</arg>
+<arg>msg=Očekávalo se alespoň 5 odkazů, našlo se ${count}.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.719075" elapsed="0.000580"/>
+</kw>
+<doc>Ověří, že v levém menu je minimálně 5 odkazů na jednotlivé roky.</doc>
+<status status="PASS" start="2025-05-13T12:54:28.755407" elapsed="0.964557"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T12:54:29.721011" elapsed="2.193619"/>
+</kw>
+<status status="PASS" start="2025-05-13T12:54:24.223320" elapsed="7.691460"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="022" id="s1" pass="2" fail="0" skip="0">022</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-13T12:54:24.212414" level="WARN">Error in file 'C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Fotogalerie\Automaticke testy\TC022\Scipt\022.robot' on line 26: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

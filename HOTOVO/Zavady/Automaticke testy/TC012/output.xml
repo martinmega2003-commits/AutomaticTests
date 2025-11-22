@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-12T12:35:20.540582" rpa="false" schemaversion="5">
+<suite id="s1" name="012" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\MartinMega\Automatické testy\TS012\Script\012.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:21.058864" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-12T12:35:21.058373" elapsed="4.837851"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-12T12:35:25.896590" elapsed="0.168670"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.065596" elapsed="0.032365"/>
+</kw>
+<doc>Otevře hlavní stránku města Dubňany</doc>
+<status status="PASS" start="2025-05-12T12:35:21.057180" elapsed="5.040982"/>
+</kw>
+<test id="s1-t1" name="TC012 - ověření závad" line="14">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.099446" elapsed="0.047671"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.147799" elapsed="0.316478"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:26.465281" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.464867" elapsed="0.112546"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="left"]/div/div[5]/div/p/a/img</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.577972" elapsed="0.036107"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="left"]/div/div[5]/div/p/a/img</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.614654" elapsed="0.314649"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:26.930404" level="INFO">Clicking element 'xpath=//*[@id="left"]/div/div[5]/div/p/a'.</msg>
+<arg>xpath=//*[@id="left"]/div/div[5]/div/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:26.929942" elapsed="2.029495"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[.//span[text()="Přidat hlášení"]]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T12:35:28.960046" elapsed="0.035093"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[.//span[text()="Přidat hlášení"]]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-12T12:35:28.995690" elapsed="0.295285"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T12:35:30.292477" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T12:35:29.291614" elapsed="1.001043"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:30.293997" level="INFO">Clicking element 'xpath=//button[.//span[text()="Přidat hlášení"]]'.</msg>
+<arg>xpath=//button[.//span[text()="Přidat hlášení"]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.293561" elapsed="0.104918"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//h2[text()="Nové hlášení"]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.399061" elapsed="0.019105"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@class="input input-textarea newInput--input"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.418682" elapsed="0.297560"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:30.717244" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/div[1]/div[2]/div[2]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/div[1]/div[2]/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.716819" elapsed="0.131206"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:30.849121" level="INFO">Selecting options from selection list 'xpath=//select[@class="input input-select newInput--input"]' by value 1.</msg>
+<arg>xpath=//select[@class="input input-select newInput--input"]</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.848674" elapsed="0.139402"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:30.989075" level="INFO">Typing text 'V testu přidáno přes Robot Framework' into text field 'xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/label[2]/div[2]/textarea[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/label[2]/div[2]/textarea[2]</arg>
+<arg>V testu přidáno přes Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:30.988663" elapsed="0.421635"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:31.411418" level="INFO">Typing text 'test@example.com' into text field 'xpath=//input[@type="email"]'.</msg>
+<arg>xpath=//input[@type="email"]</arg>
+<arg>test@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:31.410912" elapsed="0.198033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:31.610157" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/label[5]/span[1]/span'.</msg>
+<arg>xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/label[5]/span[1]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:31.609577" elapsed="0.102134"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T12:35:32.713484" level="INFO">Slept 1 second.</msg>
+<arg>${PAUSE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T12:35:31.712543" elapsed="1.001153"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T12:35:37.715072" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T12:35:32.714329" elapsed="5.000986"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T12:35:37.716485" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/div[2]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/main/div[1]/div/div/div/div/div[2]/section/form/div[2]/button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T12:35:37.716051" elapsed="0.096208"/>
+</kw>
+<doc>Test nahlášení závad ve městě Dubňany</doc>
+<status status="PASS" start="2025-05-12T12:35:26.098383" elapsed="11.714467"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-12T12:35:37.814527" elapsed="2.322052"/>
+</kw>
+<doc>Šablona Robot Framework testu – Opravená a rozšířená verze</doc>
+<status status="PASS" start="2025-05-12T12:35:20.543439" elapsed="19.593356"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="012" id="s1" pass="1" fail="0" skip="0">012</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

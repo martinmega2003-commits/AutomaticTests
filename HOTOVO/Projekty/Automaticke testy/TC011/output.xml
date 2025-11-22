@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T13:06:53.115215" rpa="false" schemaversion="5">
+<suite id="s1" name="011" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\Projekty\Automaticke testy\TS011\Script\011.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:06:53.651123" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T13:06:53.650684" elapsed="4.427594"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T13:06:58.078701" elapsed="0.075651"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T13:06:58.154663" elapsed="0.017442"/>
+</kw>
+<status status="PASS" start="2025-05-13T13:06:53.649570" elapsed="4.522742"/>
+</kw>
+<test id="s1-t1" name="TC012 - Otevření všech PDF odkazů v projektech" line="9">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:06:58.173607" level="INFO">Clicking element 'xpath=//*[@id="menucss193_cs"]/a'.</msg>
+<arg>xpath=//*[@id="menucss193_cs"]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:06:58.173283" elapsed="1.186304"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#editor_content a.file</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T13:06:59.360288" elapsed="0.055116"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:06:59.434132" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.116")&gt;, &lt;selenium.webdri...</msg>
+<var>${links}</var>
+<arg>css=#editor_content a.file</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:06:59.416221" elapsed="0.018003"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:06:59.448317" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_1.pdf&amp;original=Dotace%20-%20akce%207.6..pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:06:59.435652" elapsed="0.012774"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:06:59.450441" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_1.pdf&amp;original=Dotace%20-%20akce%207.6..pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:06:59.448789" elapsed="0.075838"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:00.525978" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:06:59.524990" elapsed="1.001231"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.116")&gt;</var>
+<status status="PASS" start="2025-05-13T13:06:59.435364" elapsed="1.091042"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:00.547572" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_2.pdf&amp;original=Podpora%20udr%C5%BEov%C3%A1n%C3%AD%20%C4%8Distoty%20cyklistick%C3%BDch%20komunikac%C3%AD%20a%20%C3%BApravyb%C4%9B%C5%BEeck%C...</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:00.527127" elapsed="0.020572"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:00.549134" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_2.pdf&amp;original=Podpora%20udr%C5%BEov%C3%A1n%C3%AD%20%C4%8Distoty%20cyklistick%C3%BDch%20komunikac%C3%AD%20a%20%C3%BApravyb%C4%9B%C5%BEeck%C3%BDch%20ly%C5%BEa%C5%99sk%C3%BDch%20trat%C3%AD%20v%20JmK%20v%20roce%202023.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:00.548132" elapsed="0.080124"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:01.629285" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:00.628601" elapsed="1.000869"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.100")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:00.526830" elapsed="1.102790"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:01.640393" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_4.pdf&amp;original=Pomn%C3%ADk%201.sv%C4%9Btov%C3%A9%20v%C3%A1lky.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:01.630194" elapsed="0.010275"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:01.641474" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_4.pdf&amp;original=Pomn%C3%ADk%201.sv%C4%9Btov%C3%A9%20v%C3%A1lky.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:01.640727" elapsed="0.105370"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:02.747050" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:01.746508" elapsed="1.000726"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.117")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:01.629931" elapsed="1.117422"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:02.756486" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_5.pdf&amp;original=Ekomobil%20publicita-zve%C5%99ejn%C4%9Bn%C3%AD.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:02.747806" elapsed="0.008743"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:02.757372" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_5.pdf&amp;original=Ekomobil%20publicita-zve%C5%99ejn%C4%9Bn%C3%AD.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:02.756788" elapsed="0.064159"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:03.822231" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:02.821402" elapsed="1.001045"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.118")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:02.747610" elapsed="1.074960"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:03.842974" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_6.pdf&amp;original=publicita%20-%20hasici.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:03.823134" elapsed="0.019929"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:03.844089" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_6.pdf&amp;original=publicita%20-%20hasici.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:03.843413" elapsed="0.143503"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:04.988954" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:03.987359" elapsed="1.001937"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.119")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:03.822853" elapsed="1.166715"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:05.000835" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_3.pdf&amp;original=Implementace%20soci%C3%A1ln%C3%AD%20pr%C3%A1ce%20ve%20m%C4%9Bst%C4%9B%20Dub%C5%88any.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:04.990478" elapsed="0.010456"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:05.001849" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_3.pdf&amp;original=Implementace%20soci%C3%A1ln%C3%AD%20pr%C3%A1ce%20ve%20m%C4%9Bst%C4%9B%20Dub%C5%88any.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:05.001207" elapsed="0.058225"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:06.060978" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:05.059881" elapsed="1.001305"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.120")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:04.990098" elapsed="1.071250"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:06.071233" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_8.pdf&amp;original=M%C3%ADstn%C3%AD%20energetick%C3%A1%20koncepce.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:06.061874" elapsed="0.009429"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:06.072188" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_8.pdf&amp;original=M%C3%ADstn%C3%AD%20energetick%C3%A1%20koncepce.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:06.071548" elapsed="0.077665"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:07.150584" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:06.149613" elapsed="1.001154"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.121")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:06.061669" elapsed="1.089214"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:07.162249" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_9.pdf&amp;original=Energetick%C3%BD%20management.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:07.151497" elapsed="0.010852"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:07.163424" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_9.pdf&amp;original=Energetick%C3%BD%20management.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:07.162637" elapsed="0.114671"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:08.278541" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:07.277710" elapsed="1.001089"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.122")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:07.151243" elapsed="1.127676"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:08.288777" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_7.pdf&amp;original=Publicita%20web_Mok%C5%99ady_final.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:08.279390" elapsed="0.009456"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:08.289775" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_7.pdf&amp;original=Publicita%20web_Mok%C5%99ady_final.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:08.289118" elapsed="0.072293"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:09.362775" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:08.361801" elapsed="1.001230"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.123")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:08.279195" elapsed="1.084208"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:09.374139" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_10.pdf&amp;original=Publicita%20web_Uli%C4%8Dka%20ke%20koupali%C5%A1ti_final.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:09.363944" elapsed="0.010263"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:09.375062" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_10.pdf&amp;original=Publicita%20web_Uli%C4%8Dka%20ke%20koupali%C5%A1ti_final.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:09.374446" elapsed="0.098821"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:10.474289" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:09.473572" elapsed="1.000919"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.124")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:09.363737" elapsed="1.110893"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:10.484840" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_11.pdf&amp;original=Publicita%20web_%C3%9Adr%C5%BEba%20CK_final.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:10.475136" elapsed="0.009782"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:10.485806" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_11.pdf&amp;original=Publicita%20web_%C3%9Adr%C5%BEba%20CK_final.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:10.485192" elapsed="0.074100"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:11.560590" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:10.559684" elapsed="1.001199"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.125")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:10.474924" elapsed="1.086162"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:11.571336" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_12.pdf&amp;original=Rekonstrukce%20m%C3%ADstn%C3%AD%20komunikace%20Vrchn%C3%AD%20konec%20-%201.etapa.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:11.561579" elapsed="0.009826"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:11.572268" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_12.pdf&amp;original=Rekonstrukce%20m%C3%ADstn%C3%AD%20komunikace%20Vrchn%C3%AD%20konec%20-%201.etapa.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:11.571649" elapsed="0.072070"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:12.644817" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:11.644173" elapsed="1.000839"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.126")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:11.561380" elapsed="1.083749"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:12.655386" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_13.pdf&amp;original=Stavebn%C3%AD%20%C3%BApravy%20lesn%C3%AD%20cesty.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:12.645659" elapsed="0.009795"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:12.656297" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_13.pdf&amp;original=Stavebn%C3%AD%20%C3%BApravy%20lesn%C3%AD%20cesty.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:12.655704" elapsed="0.064233"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:13.720915" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:12.720267" elapsed="1.000864"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.127")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:12.645403" elapsed="1.075855"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:13.732691" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_14.pdf&amp;original=Rozvoj%20eGovernmentu.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:13.721720" elapsed="0.011098"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:13.734301" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_14.pdf&amp;original=Rozvoj%20eGovernmentu.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:13.733259" elapsed="0.076603"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:14.811671" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:13.810654" elapsed="1.001278"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.128")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:13.721516" elapsed="1.090587"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:14.823480" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_15.pdf&amp;original=Publicita%20web_Energion.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:14.812877" elapsed="0.010666"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:14.824981" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_15.pdf&amp;original=Publicita%20web_Energion.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:14.823837" elapsed="0.060377"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:15.884992" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:14.884565" elapsed="1.000609"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.129")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:14.812592" elapsed="1.072732"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:15.894733" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_16.pdf&amp;original=Publicita%20web_Hasi%C4%8Di%20akceschopnost.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:15.885787" elapsed="0.009041"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:15.895861" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_16.pdf&amp;original=Publicita%20web_Hasi%C4%8Di%20akceschopnost.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:15.895098" elapsed="0.061490"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:16.957400" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:15.956904" elapsed="1.000702"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.130")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:15.885590" elapsed="1.072154"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:16.968352" level="INFO">${href} = https://www.dubnany.eu/e_download.php?file=data/editor/193cs_17.pdf&amp;original=Publicita%20web_Rodinn%C3%A1%20a%20seniorsk%C3%A1%20politika.pdf</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T13:07:16.958288" elapsed="0.010151"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T13:07:16.969342" level="INFO">Executing JavaScript:
+window.open("https://www.dubnany.eu/e_download.php?file=data/editor/193cs_17.pdf&amp;original=Publicita%20web_Rodinn%C3%A1%20a%20seniorsk%C3%A1%20politika.pdf", "_blank")
+Without any arguments.</msg>
+<arg>window.open("${href}", "_blank")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T13:07:16.968741" elapsed="0.061630"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T13:07:18.031820" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T13:07:17.030654" elapsed="1.001375"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d7c1a49597a4a0185c04a785c1f964d3", element="f.7AA9160747EC2D4D36D4DC902F06C624.d.EADF620914306B1FD09BA138902656D2.e.131")&gt;</var>
+<status status="PASS" start="2025-05-13T13:07:16.958066" elapsed="1.074122"/>
+</iter>
+<var>${el}</var>
+<value>@{links}</value>
+<status status="PASS" start="2025-05-13T13:06:59.434752" elapsed="18.597552"/>
+</for>
+<status status="PASS" start="2025-05-13T13:06:58.172470" elapsed="19.860458"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T13:07:18.034424" elapsed="2.282946"/>
+</kw>
+<status status="PASS" start="2025-05-13T13:06:53.117936" elapsed="27.199645"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="011" id="s1" pass="1" fail="0" skip="0">011</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

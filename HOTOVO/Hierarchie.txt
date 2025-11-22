@@ -1,0 +1,136 @@
+
+# TS001 – Testování hlavní stránky
+
+## Pre-conditions
+- Webová stránka: [https://www.dubnany.eu](https://www.dubnany.eu)
+- Prohlížeč: Chrome
+- Cookies nebyly odmítnuty
+- Hlavní stránka je otevřená
+
+## Testovací případy
+- TC001 – Navigace v hlavním menu
+- TC002 – Hover a klik na „Platné vyhlášky a nařízení“
+- TC003 – Vyhledávací tlačítko
+- TC004 – Odmítnutí cookies
+- TC005 – Návrat na hlavní stránku přes logo
+- TC006 – Návrat přes logo z jiné sekce
+- TC007 – Test kalendáře
+- TC008 – Sekce pro seniory
+- TC009 – Detail události
+- TC010 – Kontaktní formulář bez CAPTCHA
+- TC011 – Přepínání CSS vzhledu
+- TC012 – Kontrola favicon loga
+- TC013 – Ověření loga a odkazu
+- TC014 – Kontrola placeholderu ve vyhledávání
+- TC015 – Kontaktní údaje
+- TC016 – Kontrola menu „Úřad“
+- TC017 – Panel s kontaktními údaji
+- TC018 – Funkčnost všech odkazů
+- TC019 – Virtuální prohlídka
+
+---
+
+# TS002 – Testování Fotogalerie
+
+## Testovací případy
+- TC001 – Procházení fotogalerie
+- TC002 – Ověření dostupnosti odkazů ve Fotogalerii
+- TC003 – Ověření titulku stránky Fotogalerie
+- TC004 – Ověření počtu odkazů na roky ve Fotogalerii
+
+---
+
+# TS003 – Testování sekce Projekty
+
+## Testovací případy
+- TC001 – Otevření všech PDF odkazů v sekci Projekty
+- TC002 – Ověření načtení stránky „Projekty“ a viditelnosti hlavního nadpisu
+- TC003 – Ověření funkčnosti návratu na hlavní stránku přes kliknutí na logo
+- TC004 – Ověření existence odkazu „Rovnou na obsah“
+
+---
+
+# TS004 – Testování systému pro nahlášení závad
+
+## Testovací případy
+- TC001 – Ověření funkčnosti formuláře hlášení závad
+- TC002 – Ověření funkčnosti přiblížení a oddálení mapy
+- TC003 – Ověření přepnutí do leteckého režimu
+- TC004 – Ověření funkčnosti tlačítka „Sledovat moji polohu“
+
+---
+
+# TS005 – Senioři
+
+## Testovací případy
+- TC001 – Ověření ovládání velikosti písma
+- TC002 – Kontrola základních karet v seznamu
+- TC003 – Ověření přepnutí na standardní web
+- TC004 – Ověření přítomnosti textového odstavce v seznamu položek
+- TC005 – Ověření počtu boxů v menu na stránce pro seniory
+
+---
+
+# TS006 – Kalendář
+
+## Pre-conditions
+- Nacházím se na stránce [https://www.dubnany.eu](https://www.dubnany.eu)
+- Prohlížeč Chrome
+- Cookies mohou být zobrazeny
+
+## Testovací případy
+- TC001 – Přechod na další měsíc v kalendáři
+- TC002 – Návrat na předchozí měsíc v kalendáři
+- TC003 – Změna roku v kalendáři
+- TC004 – Počet dní v měsíci (únor 2025)
+
+---
+
+# TS007 – Testování aktualit, kalendáře a úřední desky
+
+## Pre-conditions
+- Nacházím se na stránce [https://www.dubnany.eu](https://www.dubnany.eu)
+- Prohlížeč Chrome (libovolná podporovaná verze)
+- Suite Setup „Open Main Page“ již otevřel a maximalizoval okno
+- Timeout pro všechny kroky je nastaven na ${TIMEOUT}=10s
+
+## Testovací případy
+- TC001 – Otevření stránky „Aktuality“
+- TC002 – Ověření funkčnosti kalendáře akcí
+- TC003 – Ověření funkčnosti Úřední desky
+- TC004 – Ověření přítomnosti widgetu „Informace pro občany“ a jeho záložek
+
+
+---W
+
+
+# TS008 – Testování levého menu „Úřad“
+- TC000 – Odstranění cookies
+- TC001 – Ověření textů v levém menu „Úřad“
+- TC002 – Ověření textů a odkazů v levém menu „Úřad“
+- TC003 – Přesměrování na „Úřední deska“
+- TC004 – Ověření počtu odkazů v levém menu
+- TC005 – Ověření přítomnosti textu „Městský úřad“ v hlavní sekci
+
+---
+
+# TS009 – Testování stránky „Služby“
+- TC001 – Ověření názvu stránky
+- TC002 – Kontrola přítomnosti odkazu na „Služby“ v hlavním menu
+- TC003 – Kontrola funkčnosti odkazu „Městská knihovna“
+- TC004 – Ověření sekce „Kontakt“
+- TC005 – Ověření titulku H1 stránky
+- TC006 – Ověření počtu položek v levém menu „Služby“
+- TC007 – Ověření funkčnosti odkazu „Zdravotnictví“
+
+---
+
+# TS010 – Testování záložky Kultura
+
+## Testovací případy
+- TC001 – Ověření funkce „Přečtení nahlas“
+- TC002 – Ověření, že fungují všechny odkazy
+- TC003 – Ověření viditelnosti a funkčnosti odkazu „Kalendář akcí“
+- TC004 – Testování typu akce v kalendář akcí
+- TC005 – Testování časového omezení
+- TC006 – Ověření přepnutí na Archiv akcí pomocí filtru

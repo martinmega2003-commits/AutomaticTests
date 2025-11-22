@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:06:15.005667" rpa="false" schemaversion="5">
+<suite id="s1" name="016" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Kalendář\Automatické\TC016\script\016.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:15.545659" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:06:15.545215" elapsed="4.342296"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:06:19.887885" elapsed="0.082975"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:06:19.971249" elapsed="0.023730"/>
+</kw>
+<doc>Otevře fologalerii a vyzkousi obrazky</doc>
+<status status="PASS" start="2025-05-13T15:06:15.544121" elapsed="4.451064"/>
+</kw>
+<test id="s1-t1" name="TC000 odstranění cookies" line="10">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:06:19.996125" elapsed="0.050537"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:20.047497" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:06:20.047175" elapsed="0.148688"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:06:19.995341" elapsed="0.201046"/>
+</test>
+<test id="s1-t2" name="TC022 Test interakce s kalendářem" line="13">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.kalendar-6</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:06:20.197845" elapsed="0.038805"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:20.237614" level="INFO">Clicking element 'xpath=//form[@id='kalform']//input[@alt='další']'.</msg>
+<arg>xpath=//form[@id='kalform']//input[@alt='další']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:06:20.237193" elapsed="0.155287"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T15:06:21.393814" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T15:06:20.392979" elapsed="1.001132"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:21.395995" level="INFO">Executing JavaScript:
+return document.querySelector('#month').value;
+Without any arguments.</msg>
+<msg time="2025-05-13T15:06:21.405715" level="INFO">${next_month} = 6</msg>
+<var>${next_month}</var>
+<arg>return document.querySelector('#month').value;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:06:21.394830" elapsed="0.010963"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:21.406788" level="INFO">Executing JavaScript:
+return new Date().getMonth()+1;
+Without any arguments.</msg>
+<msg time="2025-05-13T15:06:21.413423" level="INFO">${current_month} = 5</msg>
+<var>${current_month}</var>
+<arg>return new Date().getMonth()+1;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:06:21.406230" elapsed="0.007251"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-05-13T15:06:21.414162" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${next_month}</arg>
+<arg>${current_month}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-05-13T15:06:21.413874" elapsed="0.000375"/>
+</kw>
+<status status="PASS" start="2025-05-13T15:06:20.197214" elapsed="1.217350"/>
+</test>
+<test id="s1-t3" name="TC023 Test návratu do předchozího měsíce v kalendáři" line="22">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:21.416001" level="INFO">Opening url 'https://www.dubnany.eu/'</msg>
+<arg>https://www.dubnany.eu/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:06:21.415842" elapsed="2.022725"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.kalendar-6</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:06:23.439089" elapsed="0.020997"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:23.461134" level="INFO">Executing JavaScript:
+return document.querySelector('#month').value;
+Without any arguments.</msg>
+<msg time="2025-05-13T15:06:23.466545" level="INFO">${current_month} = 5</msg>
+<var>${current_month}</var>
+<arg>return document.querySelector('#month').value;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:06:23.460565" elapsed="0.006037"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:23.467466" level="INFO">Executing JavaScript:
+document.querySelector("form#kalform input[alt*='ředchozí']").click();
+Without any arguments.</msg>
+<arg>document.querySelector("form#kalform input[alt*='ředchozí']").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:06:23.466962" elapsed="0.014390"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T15:06:24.482859" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T15:06:23.481822" elapsed="1.001390"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:24.484769" level="INFO">Executing JavaScript:
+return document.querySelector('#month').value;
+Without any arguments.</msg>
+<msg time="2025-05-13T15:06:24.492458" level="INFO">${prev_month} = 4</msg>
+<var>${prev_month}</var>
+<arg>return document.querySelector('#month').value;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:06:24.483954" elapsed="0.008567"/>
+</kw>
+<kw name="Should Not Be Equal As Integers" owner="BuiltIn">
+<arg>${prev_month}</arg>
+<arg>${current_month}</arg>
+<doc>Fails if objects are equal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-13T15:06:24.492939" elapsed="0.000384"/>
+</kw>
+<doc>Kontrola, že tlačítko pro návrat na předchozí měsíc funguje</doc>
+<status status="PASS" start="2025-05-13T15:06:21.415176" elapsed="3.078496"/>
+</test>
+<test id="s1-t4" name="TC024 Test změny roku v kalendáři" line="33">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.kalendar-6</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:06:24.494742" elapsed="0.018080"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:06:24.513580" level="INFO">Selecting options from selection list 'css=#year' by value 2024.</msg>
+<arg>css=#year</arg>
+<arg>2024</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-05-13T15:06:24.513276" elapsed="0.115627"/>

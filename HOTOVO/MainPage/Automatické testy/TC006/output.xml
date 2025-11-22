@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-11T23:08:12.651595" rpa="false" schemaversion="5">
+<suite id="s1" name="006" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\MartinMega\Automatické testy\TS006\006.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-11T23:08:13.160906" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-11T23:08:13.160486" elapsed="4.238409"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.399272" elapsed="0.133172"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.532867" elapsed="0.031571"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-11T23:08:13.159419" elapsed="4.405218"/>
+</kw>
+<test id="s1-t1" name="TC006 Senioři" line="14">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=cookies-consent-reject</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.565630" elapsed="0.036821"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-11T23:08:17.603254" level="INFO">Clicking element 'id=cookies-consent-reject'.</msg>
+<arg>id=cookies-consent-reject</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.602939" elapsed="0.120920"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-11T23:08:17.724867" level="INFO">${senior_link} = xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]</msg>
+<var>${senior_link}</var>
+<arg>xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.724501" elapsed="0.000427"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${senior_link}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.725355" elapsed="0.036943"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${senior_link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-11T23:08:17.762753" elapsed="0.283532"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-11T23:08:18.047474" level="INFO">Clicking element 'xpath=//*[@id="left"]/div/div[3]/div/p[1]/span/a[1]'.</msg>
+<arg>${senior_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-11T23:08:18.046962" elapsed="0.135718"/>
+</kw>
+<doc>Ověří funkčnost zjednodušené verze pro seniory</doc>
+<status status="PASS" start="2025-05-11T23:08:17.564793" elapsed="0.618584"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-11T23:08:18.185013" elapsed="2.250992"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-11T23:08:12.654448" elapsed="7.781752"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="006" id="s1" pass="1" fail="0" skip="0">006</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-13T15:20:22.500930" rpa="false" schemaversion="5">
+<suite id="s1" name="005" source="C:\Users\marti\Desktop\School\3.semestr\testovani software\HOTOVO\MainPage\Automatické testy\TC005\script\005.robot">
+<kw name="Open Main Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:23.018187" level="INFO">Opening browser 'Chrome' to base url 'https://www.dubnany.eu/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T15:20:23.017766" elapsed="4.359393"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T15:20:27.377630" elapsed="0.107160"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=nav</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:27.485115" elapsed="0.022295"/>
+</kw>
+<doc>Otevře hlavní stránku a počká na načtení navigace.</doc>
+<status status="PASS" start="2025-05-13T15:20:23.016601" elapsed="4.491014"/>
+</kw>
+<test id="s1-t1" name="TC005 Kalendáře" line="11">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=year</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-13T15:20:27.508736" elapsed="0.288910"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:27.798527" level="INFO">Selecting options from selection list 'id=year' by value 2022.</msg>
+<arg>id=year</arg>
+<arg>2022</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-05-13T15:20:27.798159" elapsed="0.140873"/>
+</kw>
+<kw name="Get Selected List Value" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:28.171070" level="INFO">${selected} = 2022</msg>
+<var>${selected}</var>
+<arg>id=year</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:27.939565" elapsed="0.231588"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${selected}</arg>
+<arg>2022</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.171632" elapsed="0.000352"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:28.172875" level="INFO">Executing JavaScript:
+document.getElementById('cookie_consent').remove();
+Without any arguments.</msg>
+<arg>document.getElementById('cookie_consent').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.172334" elapsed="0.010645"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-13T15:20:28.183759" level="INFO">${day_locator} = xpath=//td[contains(@class,"act mesic")]/a[normalize-space(.)="26"]</msg>
+<var>${day_locator}</var>
+<arg>xpath=//td[contains(@class,"act mesic")]/a[normalize-space(.)="26"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.183448" elapsed="0.000365"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:28.220669" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>${day_locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.184157" elapsed="0.260568"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${day_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.445265" elapsed="0.294487"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${day_locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.740250" elapsed="0.031124"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T15:20:28.772414" level="INFO">Clicking element 'xpath=//td[contains(@class,"act mesic")]/a[normalize-space(.)="26"]'.</msg>
+<arg>${day_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T15:20:28.772052" elapsed="1.338703"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=body</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T15:20:30.111223" elapsed="0.015386"/>
+</kw>
+<doc>Ověří výběr roku a kliknutí na konkrétní odkaz v kalendáři.</doc>
+<tag>kalendář</tag>
+<tag>scroll</tag>
+<tag>select</tag>
+<status status="PASS" start="2025-05-13T15:20:27.507780" elapsed="2.619282"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T15:20:30.128262" elapsed="2.226500"/>
+</kw>
+<doc>Šablona Robot Framework testu</doc>
+<status status="PASS" start="2025-05-13T15:20:22.503656" elapsed="9.851255"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">kalendář</stat>
+<stat pass="1" fail="0" skip="0">scroll</stat>
+<stat pass="1" fail="0" skip="0">select</stat>
+</tag>
+<suite>
+<stat name="005" id="s1" pass="1" fail="0" skip="0">005</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

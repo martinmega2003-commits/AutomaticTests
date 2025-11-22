@@ -1,0 +1,85 @@
+TS007 – Testování aktualit, kalendáře a úřední desky
+
+Pre-conditions:
+	- Nacházím se na stránce https://www.dubnany.eu/
+	- Využívám prohlížeč Chrome (libovolná podporovaná verze)
+	- Suite Setup „Open Main Page“ již otevřel a maximalizoval okno
+	- Timeout pro všechny kroky je nastaven na ${TIMEOUT}=10s
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC001 – Otevření stránky „Aktuality“  
+Testovací kroky:
+1. Sroluji na záložky  
+   - Akce: `Scroll Element into View    xpath=//*[@id="tabs_39"]`  
+2. Kliknu na první položku záložky „Aktuality“  
+   - Akce: `Click Element    xpath=//*[@id="tabs_39"]/li[1]/a`  
+3. Počkám, až se načte widget aktualit  
+   - Akce: `Wait Until Element Is Visible    xpath=//div[@id="widget_42"]    timeout=${TIMEOUT}`  
+4. Kliknu na odkaz v první položce feedu  
+   - Akce: `Click Element    xpath=(//div[@id="widget_42"]//div[contains(@class,"feed_item")])[1]//p[@class="item_name"]/a`  
+5. Vrátím se zpět na předešlou stránku  
+   - Akce: `Go Back`  
+
+Očekávaný výsledek:
+- Po kliknutí se otevře detail prvního příspěvku a po `Go Back` se vrátím na hlavní stránku.
+
+Post-conditions:
+- Zůstávám v kontextu stránky s taby.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC002 – Ověření funkčnosti kalendáře akcí  
+Testovací kroky:
+1. Počkám, až bude viditelný panel záložek  
+   - Akce: `Wait Until Element Is Visible    xpath=//*[@id="tabs_39"]    timeout=${TIMEOUT}`  
+2. Kliknu na záložku „Kalendář akcí“  
+   - Akce: `Click Element    xpath=//*[@id="tabs_39"]/li[2]/a`  
+3. Kliknu na odkaz v první položce kalendářového feedu  
+   - Akce: `Click Element    xpath=(//div[@id="widget_43"]//div[contains(@class,"feed_item")])[1]//p[@class="item_name"]/a`  
+4. Počkám, až se na detailu objeví text názvu akce  
+   - Akce: `Sleep 3s`  
+5. Vrátím se zpět na hlavní stránku  
+   - Akce: `Go Back`  
+
+Očekávaný výsledek:
+- Detail vybrané akce se načte a obsahuje název „Tvořivé odpoledne“.
+
+Post-conditions:
+- Zůstávám v kontextu stránky s taby.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC003 – Ověření funkčnosti Úřední desky  
+Testovací kroky:
+1. Počkám, až bude viditelná třetí záložka  
+   - Akce: `Wait Until Element Is Visible    xpath=//*[@id="tabs_39"]/li[3]    timeout=${TIMEOUT}`  
+2. Kliknu na záložku „Úřední deska“  
+   - Akce: `Click Element    xpath=//*[@id="tabs_39"]/li[3]/a`  
+3. Kliknu na odkaz v první položce feedu úřední desky  
+   - Akce: `Click Element    xpath=(//div[@id="panes_39"]/div[not(contains(@style,'display: none'))]//div[contains(@class,'feed_item')])[1]//p[@class="item_name"]/a`  
+
+Očekávaný výsledek:
+- Po kliknutí se otevře detail první položky úřední desky (např. zveřejněné usnesení).
+
+Post-conditions:
+- Zůstávám v kontextu stránky s taby.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+TC004 - Ověření přítomnosti widgetu „Informace pro občany“ a jeho záložek
+
+Testovací kroky:
+1. Počkám na zobrazení widgetu s názvem „Informace pro občany“  
+2.Ověřím, že existuje kontejner se záložkami
+3.Načtu všechny položky záložek
+4.Ověřím, že je přesně 3 záložky
+5.Pro každou záložku ověřím text
+
+Očekávaný výsledek:
+	Vidím widget s nadpisem Informace pro občany.
+	Záložky Aktuality, Kalendář akcí a Úřední deska jsou přítomné a ve správném pořadí.
+
+Post-conditions:
+	Zůstávám na stránce Úřad.
+
