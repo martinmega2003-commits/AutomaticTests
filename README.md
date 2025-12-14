@@ -28,7 +28,3 @@ robot -d results "HOTOVO/MainPage/Automatické testy/TC001/Script/001.robot"
 - Stejně spusťte další případy, např. `HOTOVO/Fotogalerie/Automaticke testy/TC021/Script/021.robot`.
 - Chcete-li změnit prostředí, můžete při běhu přepsat proměnné z `ObjectRepository/Url.robot`, např. `-v URL:https://test.dubnany.eu`.
 
-## Tipy k údržbě
-- Před dalším během smažte staré výsledky nebo použijte nový `-d` adresář, aby se reporty nemíchaly.
-- Kontrolujte verzi Chromu a `chromedriveru`, případný nesoulad je nejčastější zdroj pádu testů.
-- Nové testy strukturovat stejně: proměnné do `ObjectRepository`, skripty do `TCxxx/Script`.
